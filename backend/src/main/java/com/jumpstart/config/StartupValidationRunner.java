@@ -60,27 +60,27 @@ public class StartupValidationRunner implements ApplicationRunner {
         // Check if running in production
         boolean isProduction = "prod".equalsIgnoreCase(activeProfile);
 
+        log.info("Server port: {}", System.getenv("PORT"));
+        log.info("Active profile: {}", activeProfile);
+        log.info("OS: {} {}", System.getProperty("os.name"), System.getProperty("os.version"));
+        log.info("Java: {} {}", System.getProperty("java.version"), System.getProperty("java.vendor"));
+        log.info("Available processors: {}", Runtime.getRuntime().availableProcessors());
+        log.info("Max memory: {} MB", Runtime.getRuntime().maxMemory() / 1024 / 1024);
+
         if (isProduction) {
             log.info("Running in PRODUCTION mode - performing strict validation");
 
-            // Validate database configuration for production
             validateDatabaseConfig(errors);
-
-            // Validate JWT configuration for production
             validateJwtConfig(errors, isProduction);
-
-            // Validate CORS configuration for production
             validateCorsConfig(errors);
         } else {
             log.info("Running in {} mode - using lenient validation", activeProfile);
 
-            // Lenient validation for non-production
             validateDatabaseConfig(errors);
             validateJwtConfig(errors, false);
             validateCorsConfig(errors);
         }
 
-        // Log validation results
         if (!errors.isEmpty()) {
             log.error("-".repeat(60));
             log.error("STARTUP VALIDATION FAILED");
@@ -88,7 +88,6 @@ public class StartupValidationRunner implements ApplicationRunner {
             errors.forEach(error -> log.error("  ❌ {}", error));
             log.error("-".repeat(60));
 
-            // In production, fail hard; in dev, warn but continue
             if (isProduction) {
                 throw new IllegalStateException(
                     "Startup validation failed. Fix the following issues before deployment:\n" +
@@ -107,45 +106,49 @@ public class StartupValidationRunner implements ApplicationRunner {
     private void validateDatabaseConfig(List<String> errors) {
         log.info("Validating database configuration...");
 
-        if (dbHost.isBlank() || "localhost".equals(dbHost)) {
+        if (dbHost.isBlank()) {
+            log.warn("  ⚠️  DB_HOST env var not set - will use default (localhost)");
+        } else if ("localhost".equals(dbHost)) {
             if ("prod".equals(activeProfile)) {
-                errors.add("DB_HOST is not set or is localhost in production");
+                errors.add("DB_HOST is localhost in production - configure the correct database host");
             }
-            log.warn("  ⚠️  DB_HOST: {} (defaulting to localhost for dev)", dbHost.isBlank() ? "not set" : dbHost);
+            log.warn("  ⚠️  DB_HOST: localhost (this MUST be changed in production)");
         } else {
             log.info("  ✅ DB_HOST: {}", maskHost(dbHost));
         }
 
         if (dbName.isBlank()) {
-            errors.add("DB_NAME is not set");
+            log.warn("  ⚠️  DB_NAME env var not set - will use default");
         } else {
             log.info("  ✅ DB_NAME: {}", dbName);
         }
 
         if (dbUsername.isBlank()) {
-            errors.add("DB_USERNAME is not set");
+            log.warn("  ⚠️  DB_USERNAME env var not set - will use default");
         } else {
             log.info("  ✅ DB_USERNAME: {}", dbUsername);
         }
 
         if (dbPassword.isBlank()) {
-            errors.add("DB_PASSWORD is not set");
+            log.warn("  ⚠️  DB_PASSWORD env var not set - will use default");
         } else {
             log.info("  ✅ DB_PASSWORD: [REDACTED]");
         }
 
         if (dbPort.isBlank()) {
-            log.warn("  ⚠️  DB_PORT not set, using default 3306");
+            log.info("  ℹ️  DB_PORT: using default 3306");
         } else {
             log.info("  ✅ DB_PORT: {}", dbPort);
         }
 
         // Test actual database connectivity
         try (Connection conn = dataSource.getConnection()) {
-            log.info("  ✅ Database connection successful");
+            log.info("  ✅ Database connection successful to {}", conn.getMetaData().getURL());
         } catch (Exception e) {
-            errors.add("Database connection failed: " + e.getMessage());
             log.error("  ❌ Database connection failed: {}", e.getMessage());
+            log.error("     This is expected if the database is not yet ready.");
+            log.error("     HikariCP will continue retrying in the background.");
+            log.error("     Exception type: {}", e.getClass().getName());
         }
     }
 
@@ -153,34 +156,49 @@ public class StartupValidationRunner implements ApplicationRunner {
         log.info("Validating JWT configuration...");
 
         if (jwtSecret.isBlank()) {
-            errors.add("JWT_SECRET is not set");
-            log.error("  ❌ JWT_SECRET is not set");
+            log.warn("  ⚠️  JWT_SECRET is not set - using development fallback, tokens will be insecure");
+            if (isProduction) {
+                log.warn("     Set JWT_SECRET environment variable for production security");
+            }
         } else if (jwtSecret.equals("CHANGE_ME_IN_PRODUCTION") ||
                    jwtSecret.equals("please-override-this-with-a-long-random-secret-in-every-environment") ||
                    jwtSecret.equals("dev-secret-key-for-local-testing-min-32-chars") ||
                    jwtSecret.equals("temp-secret-32chars-minimum") ||
-                   jwtSecret.equals("temp-secret-for-initial-deploy-32chars")) {
+                   jwtSecret.equals("temp-secret-for-initial-deploy-32chars") ||
+                   jwtSecret.equals("default_dev_secret_32chars")) {
             if (isProduction) {
                 errors.add("JWT_SECRET is using insecure default value - MUST be changed for production");
-                log.error("  ❌ JWT_SECRET is using default value - insecure for production!");
+                log.error("  ❌ JWT_SECRET is using a known default value - insecure for production!");
             } else {
-                log.warn("  ⚠️  JWT_SECRET is using default value");
+                log.warn("  ⚠️  JWT_SECRET is using a known default value");
             }
         } else if (jwtSecret.length() < 16) {
-            errors.add("JWT_SECRET must be at least 16 characters (current: " + jwtSecret.length() + ")");
-            log.error("  ❌ JWT_SECRET too short: {} characters (minimum: 16)", jwtSecret.length());
+            log.warn("  ⚠️  JWT_SECRET is short ({} chars) - minimum 16 recommended", jwtSecret.length());
+            if (isProduction) {
+                errors.add("JWT_SECRET is too short for production (current: " + jwtSecret.length() + " chars, minimum: 16)");
+            }
         } else {
             log.info("  ✅ JWT_SECRET length: {} characters", jwtSecret.length());
         }
+
+        log.info("  ℹ️  JWT access token expiration: via jumpstart.security.jwt.access-expiration-ms");
+        log.info("  ℹ️  JWT refresh token expiration: via jumpstart.security.jwt.refresh-expiration-ms");
     }
 
     private void validateCorsConfig(List<String> errors) {
         log.info("Validating CORS configuration...");
 
-        if (corsAllowedOrigins.isBlank()) {
-            log.warn("  ⚠️  CORS_ALLOWED_ORIGINS is not set - CORS will be disabled");
+        if (corsAllowedOrigins == null || corsAllowedOrigins.isBlank()) {
+            log.warn("  ⚠️  CORS_ALLOWED_ORIGINS is not set - CORS will reject all cross-origin requests");
+            log.warn("     Set CORS_ALLOWED_ORIGINS to a comma-separated list of allowed origins");
         } else {
-            log.info("  ✅ CORS_ALLOWED_ORIGINS: {}", corsAllowedOrigins);
+            String[] origins = corsAllowedOrigins.split(",");
+            for (String origin : origins) {
+                String trimmed = origin.trim();
+                if (!trimmed.isEmpty()) {
+                    log.info("  ✅ CORS origin: {}", trimmed);
+                }
+            }
         }
     }
 

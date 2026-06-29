@@ -37,9 +37,13 @@ ENV PORT=8080
 
 EXPOSE 8080
 
-# Health check using default port 8080 as fallback
-HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=5 \
-  CMD wget -qO- http://localhost:8080/api/health || exit 1
+# Health check - uses PORT env var (handles Railway's dynamic port assignment)
+HEALTHCHECK --interval=30s --timeout=3s --start-period=90s --retries=5 \
+  CMD wget -qO- http://localhost:$PORT/api/health || exit 1
 
 # Run using shell to properly expand environment variables
-CMD exec java -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:+HeapDumpOnOutOfMemoryError -Dserver.port=$PORT -jar app.jar
+# IMPORTANT: Do NOT pass -Dserver.port - let application-prod.yml read $PORT directly
+CMD exec java -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 \
+  -XX:+HeapDumpOnOutOfMemoryError \
+  -XX:HeapDumpPath=/tmp/heapdump.hprof \
+  -jar app.jar
