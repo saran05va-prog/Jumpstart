@@ -1,6 +1,4 @@
 spring:
-  config:
-    import: optional:file:./application-prod.yml
   datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:jumpstart}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&connectTimeout=10000
     username: ${DB_USERNAME:root}
@@ -43,8 +41,7 @@ server:
 jumpstart:
   security:
     jwt:
-      # Default provided for startup - WARNING: MUST be overridden in production!
-      secret: ${JWT_SECRET:temp-secret-for-initial-deploy-32chars}
+      secret: ${JWT_SECRET:temp-secret-32chars-minimum}
       access-expiration-ms: 900000
       refresh-expiration-ms: 604800000
   cors:

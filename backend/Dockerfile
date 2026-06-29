@@ -32,36 +32,14 @@ RUN chown jumpstart:jumpstart app.jar
 # Switch to non-root user
 USER jumpstart
 
-# -----------------------------------------------------------------------------
-# Railway PORT Configuration
-# Railway sets the PORT environment variable dynamically (e.g., 24638)
-# We default to 8080 but Railway will override this
-# -----------------------------------------------------------------------------
+# Default port - Railway will override with PORT env var
 ENV PORT=8080
 
-EXPOSE ${PORT}
+EXPOSE 8080
 
-# -----------------------------------------------------------------------------
-# Health Check
-# Uses the dynamic PORT variable for Railway compatibility
-# -----------------------------------------------------------------------------
+# Health check using default port 8080 as fallback
 HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=5 \
-  CMD wget -qO- http://localhost:${PORT}/api/health 2>/dev/null || wget -qO- http://localhost:8080/api/health 2>/dev/null || exit 1
+  CMD wget -qO- http://localhost:8080/api/health || exit 1
 
-# -----------------------------------------------------------------------------
-# JVM Configuration
-# - UseContainerSupport: Better CPU/memory management in containers
-# - MaxRAMPercentage: Use 75% of container memory (adjust based on Railway plan)
-# - server.port: Bind to Railway's PORT dynamically
-# -----------------------------------------------------------------------------
-ENTRYPOINT ["java", \
-    "-XX:+UseContainerSupport", \
-    "-XX:MaxRAMPercentage=75.0", \
-    "-XX:+HeapDumpOnOutOfMemoryError", \
-    "-Dserver.port=${PORT}", \
-    "-jar", "app.jar"]
-
-# Labels for better container management
-LABEL maintainer="jumpstart"
-LABEL description="Jumpstart Learning OS - Backend API"
-LABEL version="0.1.0"
+# Run using shell to properly expand environment variables
+CMD exec java -XX:+UseContainerSupport -XX:MaxRAMPercentage=75.0 -XX:+HeapDumpOnOutOfMemoryError -Dserver.port=$PORT -jar app.jar
