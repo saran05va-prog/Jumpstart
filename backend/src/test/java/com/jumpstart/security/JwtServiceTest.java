@@ -11,7 +11,8 @@ class JwtServiceTest {
 
     private final JwtService jwtService = new JwtService(
             "unit-test-secret-key-that-is-long-enough-for-hmac-sha256-signing",
-            1000 * 60 * 15
+            1000 * 60 * 15,
+            32
     );
 
     @Test
@@ -26,7 +27,9 @@ class JwtServiceTest {
     @Test
     void rejectsATokenThatHasExpired() {
         JwtService shortLived = new JwtService(
-                "unit-test-secret-key-that-is-long-enough-for-hmac-sha256-signing", -1000
+                "unit-test-secret-key-that-is-long-enough-for-hmac-sha256-signing",
+                -1000,
+                32
         );
         String token = shortLived.generateAccessToken(1L, "expired@example.com", Role.STUDENT);
 
