@@ -1,11 +1,8 @@
 package com.jumpstart.config;
 
-import com.zaxxer.hikari.HikariConfigMXBean;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
 import org.springframework.boot.context.properties.ConfigurationProperties;
-import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
@@ -31,7 +28,7 @@ public class DatabaseConfiguration {
     @Bean
     @Primary
     @ConfigurationProperties("spring.datasource.hikari")
-    public DataSource dataSource(@Qualifier("dataSourceProperties") DataSourceProperties properties) {
+    public DataSource dataSource(DataSourceProperties properties) {
         log.info("Configuring HikariCP DataSource");
         log.info("  JDBC URL: {}", maskJdbcUrl(properties.getUrl()));
         log.info("  Username: {}", properties.getUsername());

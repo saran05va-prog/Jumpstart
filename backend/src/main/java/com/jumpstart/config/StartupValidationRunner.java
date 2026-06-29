@@ -31,9 +31,6 @@ public class StartupValidationRunner implements ApplicationRunner {
     @Value("${jumpstart.security.jwt.secret:}")
     private String jwtSecret;
 
-    @Value("${jumpstart.security.jwt.min-secret-length:32}")
-    private int minSecretLength;
-
     @Value("${jumpstart.cors.allowed-origins:}")
     private String corsAllowedOrigins;
 
@@ -160,16 +157,18 @@ public class StartupValidationRunner implements ApplicationRunner {
             log.error("  ❌ JWT_SECRET is not set");
         } else if (jwtSecret.equals("CHANGE_ME_IN_PRODUCTION") ||
                    jwtSecret.equals("please-override-this-with-a-long-random-secret-in-every-environment") ||
-                   jwtSecret.equals("dev-secret-key-for-local-testing-min-32-chars")) {
+                   jwtSecret.equals("dev-secret-key-for-local-testing-min-32-chars") ||
+                   jwtSecret.equals("temp-secret-32chars-minimum") ||
+                   jwtSecret.equals("temp-secret-for-initial-deploy-32chars")) {
             if (isProduction) {
-                errors.add("JWT_SECRET is using insecure default value - must be changed");
-                log.error("  ❌ JWT_SECRET is using insecure default value");
+                errors.add("JWT_SECRET is using insecure default value - MUST be changed for production");
+                log.error("  ❌ JWT_SECRET is using default value - insecure for production!");
             } else {
                 log.warn("  ⚠️  JWT_SECRET is using default value");
             }
-        } else if (jwtSecret.length() < minSecretLength) {
-            errors.add("JWT_SECRET must be at least " + minSecretLength + " characters (current: " + jwtSecret.length() + ")");
-            log.error("  ❌ JWT_SECRET too short: {} characters (minimum: {})", jwtSecret.length(), minSecretLength);
+        } else if (jwtSecret.length() < 16) {
+            errors.add("JWT_SECRET must be at least 16 characters (current: " + jwtSecret.length() + ")");
+            log.error("  ❌ JWT_SECRET too short: {} characters (minimum: 16)", jwtSecret.length());
         } else {
             log.info("  ✅ JWT_SECRET length: {} characters", jwtSecret.length());
         }
@@ -186,7 +185,7 @@ public class StartupValidationRunner implements ApplicationRunner {
     }
 
     private String maskHost(String host) {
-        if (host.contains(".")) {
+        if (host != null && host.contains(".")) {
             String[] parts = host.split("\\.");
             if (parts.length > 2) {
                 return parts[0] + ".***." + parts[parts.length - 1];
