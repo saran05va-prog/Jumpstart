@@ -2,6 +2,7 @@ package com.jumpstart.config;
 
 import com.jumpstart.security.JwtAuthenticationFilter;
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -21,8 +22,10 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
+import java.util.ArrayList;
 import java.util.List;
 
+@Slf4j
 @Configuration
 @EnableMethodSecurity
 @RequiredArgsConstructor
@@ -31,7 +34,7 @@ public class SecurityConfig {
     private final JwtAuthenticationFilter jwtAuthenticationFilter;
     private final UserDetailsService userDetailsService;
 
-    @Value("${jumpstart.cors.allowed-origins}")
+    @Value("${jumpstart.cors.allowed-origins:}")
     private String allowedOrigins;
 
     @Bean
@@ -78,8 +81,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/me").authenticated()
                         .requestMatchers("/api/auth/**").permitAll()
                         .requestMatchers("/api/health").permitAll()
+                        .requestMatchers("/actuator/health", "/actuator/health/liveness", "/actuator/health/readiness").permitAll()
                         .requestMatchers("/v3/api-docs/**", "/swagger-ui/**", "/swagger-ui.html").permitAll()
-                        .requestMatchers("/actuator/health").permitAll()
                         .requestMatchers(HttpMethod.OPTIONS, "/**").permitAll()
                         .anyRequest().authenticated()
                 )
@@ -91,13 +94,47 @@ public class SecurityConfig {
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(List.of(allowedOrigins.split(",")));
+
+        // Handle empty or missing CORS origins gracefully
+        List<String> origins = parseOrigins(allowedOrigins);
+
+        if (origins.isEmpty()) {
+            log.warn("⚠️  CORS_ALLOWED_ORIGINS is empty - CORS requests will be REJECTED");
+            log.warn("   Set CORS_ALLOWED_ORIGINS environment variable to enable CORS");
+            // Allow no origins when not configured - this will reject all CORS requests
+            configuration.setAllowedOrigins(new ArrayList<>());
+        } else {
+            log.info("✅ CORS enabled for origins: {}", origins);
+            configuration.setAllowedOrigins(origins);
+        }
+
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("*"));
         configuration.setAllowCredentials(true);
+        configuration.setMaxAge(3600L);
 
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         source.registerCorsConfiguration("/**", configuration);
         return source;
+    }
+
+    /**
+     * Parse CORS origins from comma-separated string, handling empty values gracefully.
+     */
+    private List<String> parseOrigins(String origins) {
+        List<String> result = new ArrayList<>();
+
+        if (origins == null || origins.isBlank()) {
+            return result;
+        }
+
+        for (String origin : origins.split(",")) {
+            String trimmed = origin.trim();
+            if (!trimmed.isEmpty()) {
+                result.add(trimmed);
+            }
+        }
+
+        return result;
     }
 }

@@ -5,6 +5,7 @@ import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtException;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.security.Keys;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
@@ -17,18 +18,57 @@ import java.util.Date;
  * opaque random strings persisted (hashed) in the database instead of JWTs,
  * so they can be revoked individually - see {@link com.jumpstart.auth.AuthService}.
  */
+@Slf4j
 @Service
 public class JwtService {
 
+    private static final String DEFAULT_SECRET = "CHANGE_ME_IN_PRODUCTION";
+    private static final int MIN_SECRET_LENGTH = 32;
+
     private final SecretKey key;
     private final long accessExpirationMs;
+    private final int minSecretLength;
 
     public JwtService(
-            @Value("${jumpstart.security.jwt.secret}") String secret,
-            @Value("${jumpstart.security.jwt.access-expiration-ms}") long accessExpirationMs
+            @Value("${jumpstart.security.jwt.secret:CHANGE_ME_IN_PRODUCTION}") String secret,
+            @Value("${jumpstart.security.jwt.access-expiration-ms:900000}") long accessExpirationMs,
+            @Value("${jumpstart.security.jwt.min-secret-length:32}") int minSecretLength
     ) {
-        this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        this.minSecretLength = minSecretLength;
         this.accessExpirationMs = accessExpirationMs;
+
+        // Validate secret at startup
+        validateSecret(secret);
+
+        this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+        log.info("✅ JwtService initialized with access token expiration: {}ms", accessExpirationMs);
+    }
+
+    private void validateSecret(String secret) {
+        if (secret == null || secret.isBlank()) {
+            throw new IllegalStateException("JWT_SECRET is not configured");
+        }
+
+        if (secret.equals(DEFAULT_SECRET)) {
+            throw new IllegalStateException(
+                "JWT_SECRET is still set to default value. " +
+                "Generate a secure secret with: openssl rand -base64 64"
+            );
+        }
+
+        if (secret.length() < minSecretLength) {
+            throw new IllegalStateException(
+                String.format(
+                    "JWT_SECRET must be at least %d characters for 256-bit security. " +
+                    "Current length: %d characters. " +
+                    "Generate a secure secret with: openssl rand -base64 64",
+                    minSecretLength,
+                    secret.length()
+                )
+            );
+        }
+
+        log.info("✅ JWT_SECRET validated: {} characters", secret.length());
     }
 
     public String generateAccessToken(Long userId, String email, Role role) {

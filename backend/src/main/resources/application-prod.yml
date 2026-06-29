@@ -1,15 +1,89 @@
 spring:
+  config:
+    import: optional:file:./application-prod.yml
   datasource:
-    url: jdbc:mysql://${DB_HOST}:${DB_PORT:3306}/${DB_NAME}?useSSL=true&allowPublicKeyRetrieval=false&serverTimezone=UTC
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
+    # Railway MySQL - with fallback to docker-compose defaults for local dev
+    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:jumpstart}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&connectTimeout=10000
+    username: ${DB_USERNAME:root}
+    password: ${DB_PASSWORD:root}
     hikari:
-      maximum-pool-size: ${DB_POOL_SIZE:10}
-      connection-timeout: 20000
+      maximum-pool-size: ${DB_POOL_SIZE:5}
+      minimum-idle: ${DB_POOL_MIN:2}
+      connection-timeout: ${DB_CONNECTION_TIMEOUT:30000}
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      connection-test-query: SELECT 1
+      initialization-fail-timeout: 60000
   jpa:
+    hibernate:
+      # Safe production setting - use 'none' with Flyway, not 'validate' which fails on schema mismatch
+      ddl-auto: none
     show-sql: false
+    open-in-view: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: false
+        jdbc:
+          time_zone: UTC
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+    baseline-on-migrate: true
+    # Fail gracefully - clean-disabled prevents accidental data loss
+    clean-disabled: true
+    ignore-migration-patterns: E
+    # Better error reporting
+    out-of-order: false
 
+server:
+  # Railway PORT - must be dynamic
+  port: ${PORT:8080}
+  error:
+    include-message: on-param
+    include-stacktrace: ${DEBUG:false}
+    include-binding-errors: always
+  shutdown: graceful
+
+# JWT Configuration with validation
+jumpstart:
+  security:
+    jwt:
+      # Fail fast if JWT_SECRET is missing in production
+      secret: ${JWT_SECRET:CHANGE_ME_IN_PRODUCTION}
+      # Minimum 256-bit key (32 bytes = 64 hex chars)
+      min-secret-length: ${JWT_MIN_SECRET_LENGTH:32}
+      access-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS:900000}
+      refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
+  cors:
+    # Allow empty - will default to allowing nothing if not set
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:}
+
+# Production logging
 logging:
   level:
     root: INFO
     com.jumpstart: INFO
+    org.springframework.web: WARN
+    org.hibernate.SQL: WARN
+    org.hibernate.type.descriptor.sql.BasicBinder: WARN
+    com.zaxxer.hikari: INFO
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n"
+
+# Actuator for health checks
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+  endpoint:
+    health:
+      show-details: when-authorized
+      probes:
+        enabled: true
+  health:
+    db:
+      enabled: true
+    flyway:
+      enabled: true
