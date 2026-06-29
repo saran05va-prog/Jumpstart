@@ -72,7 +72,7 @@ ENTRYPOINT ["sh", "-c", "\
     --spring.jpa.open-in-view=false \
     --logging.level.root=INFO \
     --logging.level.com.jumpstart=INFO \
-    --logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n \
+    --logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n \
 "]
 
 # Labels for better container management
