@@ -41,15 +41,19 @@ public class JwtService {
         if (secret == null || secret.isBlank() || secret.equals("DEFAULT_SECRET_FOR_DEV")) {
             log.warn("JWT_SECRET is not configured or using default - JWT authentication will NOT be secure!");
             log.warn("  For development only. Set JWT_SECRET environment variable for production.");
-            // Use a temporary key for startup - will be replaced
             this.key = Keys.hmacShaKeyFor("TEMPORARY_DEV_KEY_FOR_STARTUP_ONLY".getBytes(StandardCharsets.UTF_8));
             this.isValid = false;
-        } else if (secret.length() < 8) {
-            log.warn("JWT_SECRET is too short ({} chars) - JWT authentication may not be secure!", secret.length());
-            this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
-            this.isValid = true;
+            return;
+        }
+
+        byte[] keyBytes = secret.getBytes(StandardCharsets.UTF_8);
+        if (keyBytes.length < 32) {
+            log.warn("JWT_SECRET is too short ({} bytes) - minimum 32 bytes required. JWT authentication disabled.", keyBytes.length);
+            log.warn("  Use a secret at least 32 characters long for production.");
+            this.key = Keys.hmacShaKeyFor("TEMPORARY_DEV_KEY_FOR_STARTUP_ONLY".getBytes(StandardCharsets.UTF_8));
+            this.isValid = false;
         } else {
-            this.key = Keys.hmacShaKeyFor(secret.getBytes(StandardCharsets.UTF_8));
+            this.key = Keys.hmacShaKeyFor(keyBytes);
             this.isValid = true;
             log.info("JwtService initialized - access token expiration: {}ms", accessExpirationMs);
         }

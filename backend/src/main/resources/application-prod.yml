@@ -37,7 +37,7 @@ server:
 jumpstart:
   security:
     jwt:
-      secret: ${JWT_SECRET:default_dev_secret_32chars}
+      secret: ${JWT_SECRET:change-this-to-a-long-random-string}
       access-expiration-ms: 900000
       refresh-expiration-ms: 604800000
   cors:
@@ -63,4 +63,4 @@ management:
         liveness:
           include: ping
         readiness:
-          include: db,flyway
+          include: db
