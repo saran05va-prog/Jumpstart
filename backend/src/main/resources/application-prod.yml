@@ -3,13 +3,13 @@ spring:
     import: optional:file:./application-prod.yml
   datasource:
     # Railway MySQL - with fallback to docker-compose defaults for local dev
-    url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:jumpstart}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&connectTimeout=10000
-    username: ${DB_USERNAME:root}
-    password: ${DB_PASSWORD:root}
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT:3306}/${DB_NAME}?useSSL=false&allowPublicKeyRetrieval=true&serverTimezone=UTC&connectTimeout=10000
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
     hikari:
       maximum-pool-size: ${DB_POOL_SIZE:5}
       minimum-idle: ${DB_POOL_MIN:2}
-      connection-timeout: ${DB_CONNECTION_TIMEOUT:30000}
+      connection-timeout: 30000
       idle-timeout: 600000
       max-lifetime: 1800000
       connection-test-query: SELECT 1
@@ -41,7 +41,7 @@ server:
   port: ${PORT:8080}
   error:
     include-message: on-param
-    include-stacktrace: ${DEBUG:false}
+    include-stacktrace: false
     include-binding-errors: always
   shutdown: graceful
 
@@ -50,26 +50,22 @@ jumpstart:
   security:
     jwt:
       # Fail fast if JWT_SECRET is missing in production
-      secret: ${JWT_SECRET:CHANGE_ME_IN_PRODUCTION}
+      secret: ${JWT_SECRET}
       # Minimum 256-bit key (32 bytes = 64 hex chars)
-      min-secret-length: ${JWT_MIN_SECRET_LENGTH:32}
-      access-expiration-ms: ${JWT_ACCESS_EXPIRATION_MS:900000}
-      refresh-expiration-ms: ${JWT_REFRESH_EXPIRATION_MS:604800000}
+      min-secret-length: 32
+      access-expiration-ms: 900000
+      refresh-expiration-ms: 604800000
   cors:
     # Allow empty - will default to allowing nothing if not set
-    allowed-origins: ${CORS_ALLOWED_ORIGINS:}
+    allowed-origins: ${CORS_ALLOWED_ORIGINS}
 
-# Production logging
+# Production logging - use Spring Boot defaults to avoid pattern issues
 logging:
   level:
     root: INFO
     com.jumpstart: INFO
     org.springframework.web: WARN
     org.hibernate.SQL: WARN
-    org.hibernate.type.descriptor.sql.BasicBinder: WARN
-    com.zaxxer.hikari: INFO
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n"
 
 # Actuator for health checks
 management:

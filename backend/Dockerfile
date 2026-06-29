@@ -54,26 +54,12 @@ HEALTHCHECK --interval=30s --timeout=3s --start-period=60s --retries=5 \
 # - MaxRAMPercentage: Use 75% of container memory (adjust based on Railway plan)
 # - server.port: Bind to Railway's PORT dynamically
 # -----------------------------------------------------------------------------
-ENTRYPOINT ["sh", "-c", "\
-  exec java \
-    $JAVA_OPTS \
-    -XX:+UseContainerSupport \
-    -XX:MaxRAMPercentage=75.0 \
-    -XX:+UseStringDeduplication \
-    -XX:+HeapDumpOnOutOfMemoryError \
-    -XX:+ExitOnOutOfMemoryError \
-    -Dserver.port=${PORT} \
-    -Djava.rmi.server.hostname=127.0.0.1 \
-    -Dsun.rmi.transport.tcp.readTimeout=10000 \
-    -jar app.jar \
-    --server.error.include-message=always \
-    --server.error.include-stacktrace=${DEBUG:-false} \
-    --server.shutdown=graceful \
-    --spring.jpa.open-in-view=false \
-    --logging.level.root=INFO \
-    --logging.level.com.jumpstart=INFO \
-    --logging.pattern.console=%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger - %msg%n \
-"]
+ENTRYPOINT ["java", \
+    "-XX:+UseContainerSupport", \
+    "-XX:MaxRAMPercentage=75.0", \
+    "-XX:+HeapDumpOnOutOfMemoryError", \
+    "-Dserver.port=${PORT}", \
+    "-jar", "app.jar"]
 
 # Labels for better container management
 LABEL maintainer="jumpstart"
