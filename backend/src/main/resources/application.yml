@@ -4,16 +4,16 @@ spring:
   profiles:
     active: ${SPRING_PROFILES_ACTIVE:dev}
   datasource:
-    url: "jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:jumpstart}?useSSL=${DB_SSL_ENABLED:false}&allowPublicKeyRetrieval=true&serverTimezone=UTC&connectTimeout=10000"
+    url: "jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:jumpstart}?sslMode=PREFERRED&serverTimezone=UTC&connectTimeout=10000"
     username: ${DB_USERNAME:jumpstart}
     password: ${DB_PASSWORD:jumpstart}
+    driver-class-name: com.mysql.cj.jdbc.Driver
     hikari:
-      maximum-pool-size: 5
+      maximum-pool-size: ${DB_POOL_SIZE:10}
       minimum-idle: 2
-      connection-timeout: 30000
-      idle-timeout: 600000
-      max-lifetime: 1800000
-      connection-test-query: SELECT 1
+      connection-timeout: 20000
+      idle-timeout: 300000
+      max-lifetime: 1200000
       initialization-fail-timeout: -1
   jpa:
     hibernate:
