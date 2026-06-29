@@ -1,6 +1,4 @@
 spring:
-  profiles:
-    active: prod
   datasource:
     url: jdbc:mysql://${DB_HOST:localhost}:${DB_PORT:3306}/${DB_NAME:jumpstart}?useSSL=${DB_SSL_ENABLED:false}&allowPublicKeyRetrieval=true&serverTimezone=UTC&connectTimeout=10000
     username: ${DB_USERNAME:jumpstart}
@@ -59,3 +57,10 @@ management:
   endpoint:
     health:
       show-details: when-authorized
+      probes:
+        enabled: true
+      group:
+        liveness:
+          include: ping
+        readiness:
+          include: db,flyway

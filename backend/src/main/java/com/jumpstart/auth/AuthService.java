@@ -35,7 +35,7 @@ public class AuthService {
     private final JwtService jwtService;
     private final AuthenticationManager authenticationManager;
 
-    @Value("${jumpstart.security.jwt.refresh-expiration-ms}")
+    @Value("${jumpstart.security.jwt.refresh-expiration-ms:604800000}")
     private long refreshExpirationMs;
 
     @Transactional
