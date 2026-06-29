@@ -1,0 +1,4027 @@
+{
+  "schemaVersion": "1.0",
+  "source": {
+    "id": "roadmap.sh",
+    "sourceRoadmapId": "backend",
+    "url": "https://roadmap.sh/backend",
+    "extractedAt": "2026-06-27T07:27:30.830Z"
+  },
+  "roadmap": {
+    "key": "backend",
+    "title": "Backend Developer",
+    "description": "Step by step guide to becoming a modern backend developer in 2025",
+    "category": "Engineering",
+    "tags": [
+      "roadmap",
+      "main-sitemap",
+      "role-roadmap"
+    ],
+    "colorTheme": "EMBER",
+    "metadata": {
+      "order": 2,
+      "hasTopics": true,
+      "relatedRoadmaps": [
+        "frontend",
+        "full-stack",
+        "system-design",
+        "python",
+        "devops",
+        "javascript",
+        "nodejs",
+        "postgresql-dba"
+      ]
+    }
+  },
+  "topics": [
+    {
+      "id": "internet",
+      "title": "Internet",
+      "description": "Backend development focuses on the server-side logic of a web application, handling data storage, processing, and security. It involves building and maintaining the infrastructure that powers the user-facing frontend, ensuring seamless communication between the client and the database. This includes tasks like creating APIs, managing databases, and implementing authentication and authorization mechanisms.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "internet:how-does-the-internet-work",
+          "title": "How does the internet work?",
+          "description": "The Internet is a global network of interconnected computers using TCP/IP protocols. Requests travel through ISPs to DNS servers for domain-to-IP translation, then are routed across networks via routers to destination servers. Enables dynamic, decentralized global communication.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "How does the Internet Work?",
+              "url": "https://cs.fyi/guide/how-does-internet-work"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "The Internet Explained",
+              "url": "https://www.vox.com/2014/6/16/18076282/the-internet"
+            },
+            {
+              "type": "VIDEO",
+              "title": "How does the internet work? (Full Course)",
+              "url": "https://www.youtube.com/watch?v=zN8YNNHcaZc"
+            }
+          ]
+        },
+        {
+          "id": "internet:what-is-http",
+          "title": "What is HTTP?",
+          "description": "HTTP (Hypertext Transfer Protocol) transmits hypertext over the web using a request-response model. Defines message formatting and server-browser communication. Stateless protocol where each request is independent. Forms the foundation of web communication, often used with HTTPS for encryption.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "COURSE",
+              "title": "Full HTTP Networking Course",
+              "url": "https://www.youtube.com/watch?v=2JYT5f2isg4"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is HTTP?",
+              "url": "https://www.cloudflare.com/en-gb/learning/ddos/glossary/hypertext-transfer-protocol-http/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "HTTP/3 From A To Z: Core Concepts",
+              "url": "https://www.smashingmagazine.com/2021/08/http3-core-concepts-part1/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "HTTP/1 to HTTP/2 to HTTP/3",
+              "url": "https://www.youtube.com/watch?v=a-sBfyiXysI"
+            }
+          ]
+        },
+        {
+          "id": "internet:browsers-and-how-they-work",
+          "title": "What is Domain Name?",
+          "description": "Domain names are human-readable internet addresses that translate to IP addresses for computer identification. Consists of a second-level domain (\"example\") and a top-level domain (\".com\"). Managed by registrars, providing user-friendly website navigation instead of numeric IP addresses.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is a Domain Name?",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_domain_name"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is a Domain Name? | Domain name vs. URL",
+              "url": "https://www.cloudflare.com/en-gb/learning/dns/glossary/what-is-a-domain-name/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "A Beginners Guide to How Domain Names Work",
+              "url": "https://www.youtube.com/watch?v=Y4cRx19nhJk"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Everything You Need to Know About Domain Names",
+              "url": "https://www.youtube.com/watch?v=qO5qcQgiNX4"
+            }
+          ]
+        },
+        {
+          "id": "internet:dns-and-how-it-works",
+          "title": "What is hosting?",
+          "description": "Hosting provides server space and resources for storing and delivering websites over the internet. Types include shared hosting, VPS, dedicated hosting, and cloud hosting with scalable resources. Services include infrastructure, domain registration, security, and technical support for reliable website availability.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is the difference between Webpage, Website, Web server, and search engine?",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/Pages_sites_servers_and_search_engines"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is a web server?",
+              "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/Web_mechanics/What_is_a_web_server"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Web Hosting and How Does It Work?",
+              "url": "https://www.youtube.com/watch?v=H8oAvyqQwew"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Different Types of Web Hosting Explained",
+              "url": "https://www.youtube.com/watch?v=AXVZYzw8geg"
+            }
+          ]
+        },
+        {
+          "id": "internet:what-is-domain-name",
+          "title": "DNS and how it works?",
+          "description": "DNS (Domain Name System) translates human-readable domain names into IP addresses. Uses hierarchical structure with root servers, TLD servers (.com, .org), authoritative servers, and local DNS servers. Essential for internet functionality, enabling memorable names instead of IP addresses.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Everything You Need to Know About DNS",
+              "url": "https://cs.fyi/guide/everything-you-need-to-know-about-dns"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is DNS?",
+              "url": "https://www.cloudflare.com/en-gb/learning/dns/what-is-dns/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "How DNS works (comic)",
+              "url": "https://howdns.works/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "DNS and How does it Work?",
+              "url": "https://www.youtube.com/watch?v=Wj0od2ag5sk"
+            }
+          ]
+        },
+        {
+          "id": "internet:what-is-hosting",
+          "title": "Browsers and how they work?",
+          "description": "Web browsers interpret HTML, CSS, and JavaScript to render web pages. Modern browsers use rendering engines (Blink, Gecko, WebKit) and JavaScript engines, offering features like tabs, bookmarks, extensions, and security through sandboxing and HTTPS enforcement.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "How Browsers Work",
+              "url": "https://www.ramotion.com/blog/what-is-web-browser/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Populating the Page: How Browsers Work",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/Performance/How_browsers_work"
+            },
+            {
+              "type": "VIDEO",
+              "title": "How Do Web Browsers Work?",
+              "url": "https://www.youtube.com/watch?v=5rLFYtXHo9s"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "What is backend? A comprehensive intro to server-side development",
+          "url": "https://alokai.com/blog/what-is-backend"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "What is Back-End Architecture?",
+          "url": "https://www.codecademy.com/article/what-is-back-end-architecture"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Backend web development - a complete overview",
+          "url": "https://www.youtube.com/watch?v=XBu54nfzxAQ"
+        },
+        {
+          "type": "VIDEO",
+          "title": "How The Backend Works",
+          "url": "https://www.youtube.com/watch?v=4r6WdaY3SOA"
+        }
+      ],
+      "sortOrder": 0
+    },
+    {
+      "id": "learn-a-language",
+      "title": "Pick a Language",
+      "description": "Web development divides into Frontend (HTML, CSS, JavaScript) and Backend Development. Backend uses server-side languages like Python, Java, or Node.js, complemented by databases, frameworks, and web servers for website functionality. Choose a language based on project needs and preferences.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "learn-a-language:rust",
+          "title": "Rust",
+          "description": "Rust is a systems programming language focused on safety, performance, and concurrency. Provides memory safety without garbage collection through ownership model preventing null pointers and data races. Strong type system with modern features suitable for systems programming to web servers.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Rust Roadmap",
+              "url": "https://roadmap.sh/rust"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "The Rust Programming Language - Book",
+              "url": "https://doc.rust-lang.org/book/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Rust vs. Go: Why They’re Better Together",
+              "url": "https://thenewstack.io/rust-vs-go-why-theyre-better-together/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Learn Rust Programming",
+              "url": "https://www.youtube.com/watch?v=BpPEoZW5IiY"
+            }
+          ]
+        },
+        {
+          "id": "learn-a-language:php",
+          "title": "PHP",
+          "description": "PHP (Hypertext Preprocessor) is an open-source scripting language for web development embedded in HTML to create dynamic pages. Known for simplicity and database integration, particularly MySQL. Powers major platforms like WordPress, Joomla, and Drupal with server-side scripting capabilities.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Visit Dedicated PHP Roadmap",
+              "url": "https://roadmap.sh/php"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "PHP",
+              "url": "https://php.net/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "PHP - The Right Way",
+              "url": "https://phptherightway.com/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "PHP for Beginners",
+              "url": "https://www.youtube.com/watch?v=zZ6vybT1HQs"
+            }
+          ]
+        },
+        {
+          "id": "learn-a-language:go",
+          "title": "Go",
+          "description": "Go (Golang) is Google's statically typed, compiled language combining efficiency with ease of use. Features built-in concurrency via goroutines and channels, simple syntax, fast compilation, and a comprehensive standard library. Popular for microservices, web servers, and cloud-native development.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Go Roadmap",
+              "url": "https://roadmap.sh/golang"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Go Reference Documentation",
+              "url": "https://go.dev/doc/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Go by Example - annotated example programs",
+              "url": "https://gobyexample.com/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Go Programming – Golang Course with Bonus Projects",
+              "url": "https://www.youtube.com/watch?v=un6ZyFkqFKo"
+            }
+          ]
+        },
+        {
+          "id": "learn-a-language:javascript",
+          "title": "JavaScript",
+          "description": "JavaScript is a versatile, high-level language for web interactivity and dynamic features. Runs client-side in browsers and server-side with Node.js for full-stack development. Supports multiple programming styles with rich ecosystem of frameworks like React, Angular, and Vue.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated JavaScript Roadmap",
+              "url": "https://roadmap.sh/javascript"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "The Modern JavaScript Tutorial",
+              "url": "https://javascript.info/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Build 30 Javascript Projects in 30 days",
+              "url": "https://javascript30.com/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "JavaScript Crash Course for Beginners",
+              "url": "https://youtu.be/hdI2bqOjy3c?t=2"
+            }
+          ]
+        },
+        {
+          "id": "learn-a-language:java",
+          "title": "Java",
+          "description": "Java is Oracle's high-level, object-oriented language following \"write once, run anywhere\" via JVM. Features automatic memory management, vast standard library, and strong security. Widely used for enterprise applications, Android apps, and backend systems.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Java Roadmap",
+              "url": "https://roadmap.sh/java"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Java Website",
+              "url": "https://www.java.com/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Complete Java course",
+              "url": "https://www.youtube.com/watch?v=xk4_1vDrzzo"
+            }
+          ]
+        },
+        {
+          "id": "learn-a-language:python",
+          "title": "Python",
+          "description": "Python is a high-level, interpreted language known for readability, simplicity, and versatility. Supports multiple paradigms with rich ecosystem including Django/Flask (web), Pandas/NumPy (data), TensorFlow/PyTorch (ML). Used for web development, data science, automation, and scripting.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Python Roadmap",
+              "url": "https://roadmap.sh/python"
+            },
+            {
+              "type": "COURSE",
+              "title": "Python Full Course for free",
+              "url": "https://www.youtube.com/watch?v=ix9cRaBkVe0"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Python Website",
+              "url": "https://www.python.org/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Automate the Boring Stuff",
+              "url": "https://automatetheboringstuff.com/"
+            }
+          ]
+        },
+        {
+          "id": "learn-a-language:csharp",
+          "title": "C#",
+          "description": "C# is Microsoft's modern, object-oriented language combining C++ power with Visual Basic simplicity. Used for Windows apps, [ASP.NET](http://ASP.NET) web development, Unity games, and Xamarin mobile apps. Features garbage collection, type safety, and strong .NET ecosystem integration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "COURSE",
+              "title": "C# Learning Path",
+              "url": "https://docs.microsoft.com/en-us/learn/paths/csharp-first-steps/?WT.mc_id=dotnet-35129-website"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "C# Tour",
+              "url": "https://learn.microsoft.com/en-us/dotnet/csharp/tour-of-csharp/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Learn C# Programming – Full Course with Mini-Projects",
+              "url": "https://www.youtube.com/watch?v=YrtFtdTTfv0"
+            }
+          ]
+        },
+        {
+          "id": "learn-a-language:ruby",
+          "title": "Ruby",
+          "description": "Ruby is a high-level, object-oriented language known for simplicity, productivity, and elegant syntax. Emphasizes developer happiness and supports multiple paradigms. Famous for the Ruby on Rails framework, enabling rapid web application development. Popular for web development, scripting, and prototyping.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit the Dedicated Ruby Roadmap",
+              "url": "https://roadmap.sh/ruby"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Learn Ruby in 20 minutes",
+              "url": "https://www.ruby-lang.org/en/documentation/quickstart/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Ruby, An Introduction to a Programmer’s Best Friend",
+              "url": "https://thenewstack.io/ruby-a-programmers-best-friend/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Ruby Comprehensive courses",
+              "url": "https://www.youtube.com/playlist?list=PL_EzhIKp343lBMH4UuklrMRL_WkilGoXe"
+            }
+          ]
+        }
+      ],
+      "resources": [],
+      "sortOrder": 1
+    },
+    {
+      "id": "version-control-systems",
+      "title": "Version Control Systems",
+      "description": "Version Control Systems (VCS) manage and track code changes over time, enabling efficient collaboration. Record file changes, allow reverting to previous versions, and maintain modification history. Can be centralized (Subversion) or distributed (Git, Mercurial) for collaboration and code integrity.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "version-control-systems:git",
+          "title": "Git",
+          "description": "Git is a distributed version control system created by Linus Torvalds in 2005. Tracks code changes, enables collaborative development, maintains complete history, and supports branching/merging. Each developer has full repository copy, allowing offline work and robust collaboration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Git & GitHub Roadmap",
+              "url": "https://roadmap.sh/git-github"
+            },
+            {
+              "type": "COURSE",
+              "title": "Why use Git? (Interactive Lesson)",
+              "url": "https://inter-git.com/lessons/introduction"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Tutorial: Git for Absolutely Everyone",
+              "url": "https://thenewstack.io/tutorial-git-for-absolutely-everyone/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Git & GitHub Crash Course For Beginners",
+              "url": "https://www.youtube.com/watch?v=SWYqp7iY_Tc"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "CUSTOM",
+          "title": "Visit Dedicated Git & GitHub Roadmap",
+          "url": "https://roadmap.sh/git-github"
+        },
+        {
+          "type": "COURSE",
+          "title": "Why version control? (Interactive Lesson)",
+          "url": "https://inter-git.com/lessons/introduction"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "What is version control?",
+          "url": "https://www.atlassian.com/git/tutorials/what-is-version-control"
+        },
+        {
+          "type": "VIDEO",
+          "title": "What is a Version Control System and why you should always use it",
+          "url": "https://www.youtube.com/watch?v=IeXhYROClZk"
+        }
+      ],
+      "sortOrder": 2
+    },
+    {
+      "id": "repo-hosting-services",
+      "title": "Repo Hosting Services",
+      "description": "Repo hosting services provide storage, management, and collaboration tools for version-controlled code repositories. Support Git, Mercurial, Subversion with features like branching, pull requests, issue tracking, code review, and CI/CD integration. Popular services: GitHub, GitLab, Bitbucket.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "repo-hosting-services:github",
+          "title": "GitHub",
+          "description": "GitHub is Microsoft's web-based Git hosting platform offering repositories, pull requests, issues, and automated workflows. Supports public/private repos, code review, project management, and social coding features. Central hub for open-source and team development collaboration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Git & GitHub Roadmap",
+              "url": "https://roadmap.sh/git-github"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "GitHub Documentation",
+              "url": "https://docs.github.com"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is GitHub?",
+              "url": "https://www.youtube.com/watch?v=w3jLJU7DT5E"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Git and GitHub for Beginners",
+              "url": "https://www.youtube.com/watch?v=RGOj5yH7evk"
+            }
+          ]
+        },
+        {
+          "id": "repo-hosting-services:bitbucket",
+          "title": "Bitbucket",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "repo-hosting-services:gitlab",
+          "title": "GitLab",
+          "description": "GitLab is a comprehensive DevOps platform providing source code management, CI/CD, issue tracking, and more in one application. Features merge requests, built-in pipelines, container registry, and Kubernetes integration. Offers cloud-hosted and self-hosted options for complete development lifecycle management.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "GitLab",
+              "url": "https://gitlab.com/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "GitLab Documentation",
+              "url": "https://docs.gitlab.com/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is GitLab and Why Use It?",
+              "url": "https://www.youtube.com/watch?v=bnF7f1zGpo4"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "DOCUMENTATION",
+          "title": "GitHub",
+          "url": "https://github.com"
+        },
+        {
+          "type": "DOCUMENTATION",
+          "title": "GitLab",
+          "url": "https://about.gitlab.com/"
+        },
+        {
+          "type": "DOCUMENTATION",
+          "title": "BitBucket",
+          "url": "https://bitbucket.org/product/guides/getting-started/overview"
+        }
+      ],
+      "sortOrder": 3
+    },
+    {
+      "id": "relational-databases",
+      "title": "Relational Databases",
+      "description": "Relational databases organize data into structured tables with rows and columns, using SQL for querying. Enforce data integrity through keys and constraints, handle complex queries and transactions efficiently. Examples: MySQL, PostgreSQL, Oracle. Used for structured data storage and strong consistency.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "relational-databases:postgresql",
+          "title": "PostgreSQL",
+          "description": "PostgreSQL is an advanced, open-source RDBMS known for robustness, extensibility, and standards compliance. Supports complex queries, custom data types, full-text search, and ACID properties. Highly extensible with strong concurrency support, suitable for web apps to data warehousing.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated PostgreSQL DBA Roadmap",
+              "url": "https://roadmap.sh/postgresql-dba"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Official Website",
+              "url": "https://www.postgresql.org/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Learn PostgreSQL - Full Tutorial for Beginners",
+              "url": "https://www.postgresqltutorial.com/"
+            },
+            {
+              "type": "COURSE",
+              "title": "PostgreSQL Full Course for Beginners – freeCodeCamp",
+              "url": "https://www.youtube.com/watch?v=qw--VYLpxG4"
+            }
+          ]
+        },
+        {
+          "id": "relational-databases:mssql",
+          "title": "MS SQL",
+          "description": "Microsoft SQL Server is a relational database management system for structured data management. Supports querying, transactions, data warehousing with T-SQL, SSIS integration, SSAS analytics, and SSRS reporting. Used in enterprise environments for reliable storage and processing.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated SQL Roadmap",
+              "url": "https://roadmap.sh/sql"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "MS SQL",
+              "url": "https://www.microsoft.com/en-ca/sql-server/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Tutorials for SQL Server",
+              "url": "https://docs.microsoft.com/en-us/sql/sql-server/tutorials-for-sql-server-2016?view=sql-server-ver15"
+            },
+            {
+              "type": "VIDEO",
+              "title": "SQL Server tutorial for beginners",
+              "url": "https://www.youtube.com/watch?v=-EPMOaV7h_Q"
+            }
+          ]
+        },
+        {
+          "id": "relational-databases:mysql",
+          "title": "MySQL",
+          "description": "MySQL is an open-source RDBMS known for speed, reliability, and ease of use. Supports SQL, transactions, indexing, and stored procedures. Widely used for web applications, integrates with many languages, and is part of the LAMP stack. Maintained by Oracle with large community support.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "MySQL",
+              "url": "https://www.mysql.com/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "MySQL for Developers",
+              "url": "https://planetscale.com/courses/mysql-for-developers/introduction/course-introduction"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "MySQL Tutorial",
+              "url": "https://www.mysqltutorial.org/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "MySQL Complete Course",
+              "url": "https://www.youtube.com/watch?v=5OdVJbNCSso"
+            }
+          ]
+        },
+        {
+          "id": "relational-databases:oracle",
+          "title": "Oracle",
+          "description": "Oracle Database is an enterprise-grade RDBMS known for scalability, reliability, and comprehensive features. Supports complex data management, SQL querying, transaction management, clustering, and multiple data models (relational, spatial, graph). Used for large-scale, secure, high-performance applications.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Oracle Website",
+              "url": "https://www.oracle.com/database/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Oracle Docs",
+              "url": "https://docs.oracle.com/en/database/index.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Oracle SQL Tutorial for Beginners",
+              "url": "https://www.youtube.com/watch?v=ObbNGhcxXJA"
+            }
+          ]
+        },
+        {
+          "id": "relational-databases:mariadb",
+          "title": "MariaDB",
+          "description": "MariaDB is a community-developed MySQL fork created by original MySQL team members. Designed as a feature-rich, stable, drop-in replacement for MySQL with better licensing. Works with external developers to deliver a comprehensive open-source SQL server.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "MariaDB",
+              "url": "https://mariadb.org/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "MariaDB vs MySQL",
+              "url": "https://www.guru99.com/mariadb-vs-mysql.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "MariaDB Tutorial For Beginners in One Hour",
+              "url": "https://www.youtube.com/watch?v=_AMj02sANpI"
+            }
+          ]
+        },
+        {
+          "id": "relational-databases:sqlite",
+          "title": "SQLite",
+          "description": "SQLite is a lightweight, serverless, self-contained SQL database engine storing data in a single file. Used in mobile apps, desktop applications, and small websites. Supports standard SQL with ACID compliance. Popular for compact, high-performance database needs with minimal configuration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "SQLite",
+              "url": "https://www.sqlite.org/index.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "SQLite Tutorial",
+              "url": "https://www.sqlitetutorial.net/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "SQLite Introduction",
+              "url": "https://www.youtube.com/watch?v=8Xyn8R9eKB8"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "COURSE",
+          "title": "Databases and SQL",
+          "url": "https://www.edx.org/course/databases-5-sql"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Relational Databases",
+          "url": "https://www.ibm.com/cloud/learn/relational-databases"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Intro To Relational Databases",
+          "url": "https://www.udacity.com/course/intro-to-relational-databases--ud197"
+        },
+        {
+          "type": "VIDEO",
+          "title": "What is Relational Database",
+          "url": "https://youtu.be/OqjJjpjDRLc"
+        }
+      ],
+      "sortOrder": 4
+    },
+    {
+      "id": "apis",
+      "title": "Learn about APIs",
+      "description": "API (Application Programming Interface) defines rules and protocols for software applications to communicate. Provides standardized access to functionalities without understanding internal workings. Includes endpoints, request methods (GET, POST, PUT), and data formats (JSON, XML).",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "apis:hateoas",
+          "title": "HATEOAS",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "apis:json-apis",
+          "title": "JSON APIs",
+          "description": "JSON (JavaScript Object Notation) is an encoding scheme eliminating ad-hoc code for server communication. JSON API provides a standardized implementation for data stores and structures, including entity types, bundles, and fields with defined communication protocols.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "COURSE",
+              "title": "Full Stack Open - Node.js and Express (Part 3)",
+              "url": "https://fullstackopen.com/en/part3"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "JSON.org - Introducing JSON",
+              "url": "https://www.json.org/json-en.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "JSON API Recommendations and Best Practices",
+              "url": "https://jsonapi.org/recommendations/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "REST API vs JSON API - Which Should You Use?",
+              "url": "https://www.youtube.com/watch?v=0oXYLzuucwE"
+            }
+          ]
+        },
+        {
+          "id": "apis:open-api-spec",
+          "title": "Open API Specs",
+          "description": "OpenAPI Specification (OAS), formerly Swagger, is a standard for defining and documenting RESTful APIs in YAML/JSON format. Describes endpoints, formats, authentication, and metadata. Enables client generation, automated documentation, testing, and promotes API design consistency.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "OpenAPI Specification Website",
+              "url": "https://swagger.io/specification/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Open API Live Editor",
+              "url": "https://swagger.io/tools/swagger-editor/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "OpenAPI 3.0: How to Design and Document APIs with the Latest OpenAPI Specification 3.0",
+              "url": "https://www.youtube.com/watch?v=6kwmW_p_Tig"
+            },
+            {
+              "type": "VIDEO",
+              "title": "REST API and OpenAPI: It’s Not an Either/Or Question",
+              "url": "https://www.youtube.com/watch?v=pRS9LRBgjYg"
+            }
+          ]
+        },
+        {
+          "id": "apis:soap",
+          "title": "SOAP",
+          "description": "SOAP (Simple Object Access Protocol) is a structured message protocol for exchanging information between systems and applications. SOAP APIs are developed in formal, structured ways. Messages can be carried over various protocols, including HTTP.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is SOAP? REST vs SOAP - AWS",
+              "url": "https://aws.amazon.com/what-is/soap-vs-rest/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "SOAP Web Services Tutorial for Beginners",
+              "url": "https://www.guru99.com/soap-simple-object-access-protocol.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "REST vs SOAP",
+              "url": "https://www.youtube.com/watch?v=_fq8Ye8kodA"
+            },
+            {
+              "type": "VIDEO",
+              "title": "SOAP vs REST vs GraphQL vs gRPC",
+              "url": "https://www.youtube.com/watch?v=4vLxWqE94l4"
+            }
+          ]
+        },
+        {
+          "id": "apis:grpc",
+          "title": "gRPC",
+          "description": "gRPC is a high-performance, open-source RPC (Remote Procedure Call) framework. Allows programs to execute procedures on remote computers like local functions. Developers don't need to handle remote interaction details, and client/server can use different programming languages.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "gRPC Website",
+              "url": "https://grpc.io/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What Is GRPC?",
+              "url": "https://www.wallarm.com/what/the-concept-of-grpc"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What Is GRPC?",
+              "url": "https://www.youtube.com/watch?v=hVrwuMnCtok"
+            }
+          ]
+        },
+        {
+          "id": "apis:rest",
+          "title": "REST",
+          "description": "REST API is an architectural style using standard HTTP methods (GET, POST, PUT, DELETE) to interact with URI-represented resources. It's stateless, requiring complete request information, uses HTTP status codes, and typically communicates via JSON/XML. Popular for simplicity and scalability.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is a REST API?",
+              "url": "https://www.redhat.com/en/topics/api/what-is-a-rest-api"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Best practices for RESTful web API design",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/best-practices/api-design"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Learn REST: A RESTful Tutorial",
+              "url": "https://restapitutorial.com/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "REST API Best Practices – REST Endpoint Design",
+              "url": "https://www.youtube.com/watch?v=1Wl-rtew1_E"
+            }
+          ]
+        },
+        {
+          "id": "apis:graphql",
+          "title": "GraphQL",
+          "description": "GraphQL is Facebook's query language for APIs, allowing clients to request exactly the data they need. Uses a single endpoint with schema-defined data structure, reducing over-fetching and under-fetching. More flexible than REST for complex applications with diverse platform needs.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated GraphQL Roadmap",
+              "url": "https://roadmap.sh/graphql"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "GraphQL",
+              "url": "https://graphql.org/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Tutorial - GraphQL Explained in 100 Seconds",
+              "url": "https://www.youtube.com/watch?v=eIQh02xuVw4"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication",
+          "title": "Authentication",
+          "description": "API authentication verifies client identity to ensure only authorized access to resources. Common methods include API keys, OAuth 2.0, JWT, and basic auth. It protects data, prevents unauthorized access, enables usage tracking, and provides granular control over API resources.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Basic Authentication",
+              "url": "https://roadmap.sh/guides/basic-authentication"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Session Based Authentication",
+              "url": "https://roadmap.sh/guides/session-based-authentication"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Token Based Authentication",
+              "url": "https://roadmap.sh/guides/token-authentication"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "JWT Authentication",
+              "url": "https://roadmap.sh/guides/jwt-authentication"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "OAuth - Open Authorization",
+              "url": "https://roadmap.sh/guides/oauth"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "SSO - Single Sign On",
+              "url": "https://roadmap.sh/guides/sso"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication:jwt",
+          "title": "JWT",
+          "description": "JWT (JSON Web Token) securely transmits information as JSON objects with three parts: header (token type/algorithm), payload (claims/data), and signature (integrity verification). Used for authentication and authorization in web/mobile apps. Compact, self-contained, and HTTP header-friendly.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "jwt.io Website",
+              "url": "https://jwt.io/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is JWT?",
+              "url": "https://www.akana.com/blog/what-is-jwt"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "JWT Security Best Practices",
+              "url": "https://curity.io/resources/learn/jwt-best-practices/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Node.js JWT Authentication Tutorial",
+              "url": "https://www.youtube.com/watch?v=mbsmsi7l3r4"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication:basic-authentication",
+          "title": "Basic Authentication",
+          "description": "Basic Authentication sends base64-encoded username:password in HTTP headers. Simple to implement but insecure since base64 is easily decoded. Should only be used over HTTPS for credential protection. Best for low-risk scenarios or fallback mechanisms.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "HTTP Basic Authentication",
+              "url": "https://roadmap.sh/guides/http-basic-authentication"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Basic Authentication in 5 minutes",
+              "url": "https://www.youtube.com/watch?v=rhi1eIjSbvk"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Illustrated HTTP Basic Authentication",
+              "url": "https://www.youtube.com/watch?v=mwccHwUn7Gc"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication:token-authentication",
+          "title": "Token Authentication",
+          "description": "Token-based authentication verifies user identity and provides unique access tokens. Users access protected resources without re-entering credentials while token remains valid. Works like stamped tickets, invalidated on logout. Offers second security layer with detailed administrative control.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Token Based Authentication",
+              "url": "https://roadmap.sh/guides/token-authentication"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What Is Token-Based Authentication?",
+              "url": "https://www.okta.com/identity-101/what-is-token-based-authentication/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Why is JWT popular?",
+              "url": "https://www.youtube.com/watch?v=P2CPd9ynFLg"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication:oauth",
+          "title": "OAuth",
+          "description": "OAuth is an open authorization standard allowing third-party applications to access user resources without exposing credentials. Uses access tokens issued after user permission, involving the resource owner, the resource server, and the authorization server. Enables secure token-based access management for services.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Okta - What the Heck is OAuth",
+              "url": "https://developer.okta.com/blog/2017/06/21/what-the-heck-is-oauth"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "DigitalOcean - An Introduction to OAuth 2",
+              "url": "https://www.digitalocean.com/community/tutorials/an-introduction-to-oauth-2"
+            },
+            {
+              "type": "VIDEO",
+              "title": "OAuth 2 Explained In Simple Terms",
+              "url": "https://www.youtube.com/watch?v=ZV5yTm4pT8g"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication:cookie-based",
+          "title": "Cookie Based Auth",
+          "description": "Cookie-based authentication maintains user sessions by storing session IDs in browser cookies. Server stores session data and uses cookies as keys. Simple to implement and browser-native, but vulnerable to CSRF attacks and challenging for cross-origin requests.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "HTTP Cookies - MDN Web Docs",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Session vs Token Authentication",
+              "url": "https://www.section.io/engineering-education/token-based-vs-session-based-authentication/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Session vs Token Authentication in 100 Seconds",
+              "url": "https://www.youtube.com/watch?v=UBUNrFtufWo"
+            },
+            {
+              "type": "VIDEO",
+              "title": "How do cookies work?",
+              "url": "https://www.youtube.com/watch?v=rdVPflECed8"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication:openid",
+          "title": "OpenID",
+          "description": "OpenID is an open standard for decentralized authentication enabling single sign-on across multiple websites using one set of credentials managed by an identity provider. Often works with OAuth 2.0 for authorization, enhancing user convenience and streamlining identity management.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "OpenID Website",
+              "url": "https://openid.net/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "OpenID Connect Protocol",
+              "url": "https://auth0.com/docs/authenticate/protocols/openid-connect-protocol"
+            },
+            {
+              "type": "VIDEO",
+              "title": "An Illustrated Guide to OAuth and OpenID Connect",
+              "url": "https://www.youtube.com/watch?v=t18YB3xDfXI"
+            },
+            {
+              "type": "VIDEO",
+              "title": "OAuth 2.0 and OpenID Connect (in plain English)",
+              "url": "https://www.youtube.com/watch?v=996OiexHze0"
+            }
+          ]
+        },
+        {
+          "id": "apis:authentication:saml",
+          "title": "SAML",
+          "description": "SAML (Security Assertion Markup Language) is an XML-based framework for single sign-on (SSO) and identity federation. Enables authentication exchange between identity providers (IdP) and service providers (SP) through XML assertions containing user identity and permissions. Streamlines user management and centralized authentication.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "SAML Explained in Plain English",
+              "url": "https://www.onelogin.com/learn/saml"
+            },
+            {
+              "type": "VIDEO",
+              "title": "How SAML Authentication Works",
+              "url": "https://www.youtube.com/watch?v=VzRnb9u8T1A"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "CUSTOM",
+          "title": "Visit the Dedicated API Design Roadmap",
+          "url": "https://roadmap.sh/api-design"
+        },
+        {
+          "type": "CUSTOM",
+          "title": "Visit the Dedicated API Security Best Practices",
+          "url": "https://roadmap.sh/api-security-best-practices"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "What is an API?",
+          "url": "https://aws.amazon.com/what-is/api/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "What is an API (in 5 minutes)",
+          "url": "https://www.youtube.com/watch?v=ByGJQzlzxQg"
+        }
+      ],
+      "sortOrder": 5
+    },
+    {
+      "id": "caching",
+      "title": "Caching",
+      "description": "",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "caching:client-side",
+          "title": "Client Side",
+          "description": "Client-side caching stores data locally on user devices to improve performance and reduce server load. Uses HTTP caching headers, service workers, and local storage APIs. Reduces network traffic and load times but requires careful cache invalidation strategies.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Client Side Caching",
+              "url": "https://redis.io/docs/latest/develop/use/client-side-caching/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Everything you need to know about HTTP Caching",
+              "url": "https://www.youtube.com/watch?v=HiBDZgTNpXY"
+            }
+          ]
+        },
+        {
+          "id": "caching:cdn",
+          "title": "CDN",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "caching:server-side",
+          "title": "Server Side",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "caching:server-side:redis",
+          "title": "Redis",
+          "description": "Redis is an open-source, in-memory data structure store supporting strings, lists, sets, hashes, and sorted sets. Used for caching, session management, real-time analytics, and message brokering. Offers persistence, replication, clustering, and low-latency high-throughput performance.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Redis Roadmap",
+              "url": "https://roadmap.sh/redis"
+            },
+            {
+              "type": "COURSE",
+              "title": "Redis Crash Course",
+              "url": "https://www.youtube.com/watch?v=XCsS_NVAa1g"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Redis Documentation",
+              "url": "https://redis.io/docs/latest/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Redis Tutorial for Beginners",
+              "url": "https://www.youtube.com/watch?v=jgpVdJB2sKQ"
+            }
+          ]
+        },
+        {
+          "id": "caching:server-side:memcached",
+          "title": "Memcached",
+          "description": "Memcached is a distributed memory-caching system that speeds up dynamic websites by caching data and objects in RAM. Provides large distributed hash table across multiple machines with LRU eviction. Applications layer requests in RAM before falling back to slower backing stores.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "GITHUB",
+              "title": "memcached/memcached",
+              "url": "https://github.com/memcached/memcached#readme"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Memcached Tutorial",
+              "url": "https://www.tutorialspoint.com/memcached/index.htm"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Redis vs Memcached",
+              "url": "https://www.youtube.com/watch?v=Gyy1SiE8avE"
+            }
+          ]
+        }
+      ],
+      "resources": [],
+      "sortOrder": 6
+    },
+    {
+      "id": "web-security-knowledge",
+      "title": "Web Security",
+      "description": "Web security protects applications from threats through strong authentication, encryption (SSL/TLS), input validation preventing SQL injection and XSS attacks, secure coding practices, session management, regular updates, and ongoing security testing including penetration testing.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "web-security-knowledge:md5",
+          "title": "MD5",
+          "description": "MD5 (Message-Digest Algorithm 5) produces 128-bit hash values as 32-character hexadecimal strings. Once popular for data integrity and passwords, now considered cryptographically broken due to collision vulnerabilities. Largely replaced by secure alternatives like SHA-256.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Wikipedia - MD5",
+              "url": "https://en.wikipedia.org/wiki/MD5"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is MD5?",
+              "url": "https://www.techtarget.com/searchsecurity/definition/MD5"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Why is MD5 not safe?",
+              "url": "https://infosecscout.com/why-md5-is-not-safe/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "How the MD5 hash function works",
+              "url": "https://www.youtube.com/watch?v=5MiMK45gkTY"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:sha-family",
+          "title": "SHA",
+          "description": "SHA (Secure Hash Algorithm) is a family of cryptographic hash functions generating fixed-size hash values for data integrity and security. Includes SHA-1 (weak, 160-bit), SHA-2 (stronger, 224-512 bits), and SHA-3 (latest with additional security features). Used for password storage and digital signatures.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is SHA?",
+              "url": "https://www.encryptionconsulting.com/education-center/what-is-sha/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "SHA: Secure Hashing Algorithm",
+              "url": "https://www.youtube.com/watch?v=DMtFhACPnTY"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:scrypt",
+          "title": "scrypt",
+          "description": "scrypt is a memory-hard key derivation function designed to resist brute-force and hardware-based attacks (GPUs, ASICs). Combines hash functions with high memory usage and CPU-intensive computation, making large-scale attacks costly and impractical. Used for secure password storage and cryptocurrency mining.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "sCrypt Website",
+              "url": "https://www.tarsnap.com/scrypt.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Wikipedia - scrypt",
+              "url": "https://en.wikipedia.org/wiki/Scrypt"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:bcrypt",
+          "title": "bcrypt",
+          "description": "Bcrypt is a secure password-hashing function based on Blowfish cipher with built-in salt protection. Features adaptive cost factor that increases difficulty over time to resist brute-force attacks. Produces 60-character hashes, widely used for secure password storage.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "GITHUB",
+              "title": "bcrypt for Node.js",
+              "url": "https://github.com/kelektiv/node.bcrypt.js"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Understanding bcrypt",
+              "url": "https://auth0.com/blog/hashing-in-action-understanding-bcrypt/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Why you should use BCrypt to hash passwords",
+              "url": "https://www.freecodecamp.org/news/why-you-should-use-bcrypt-to-hash-passwords/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "bcrypt explained",
+              "url": "https://www.youtube.com/watch?v=AzA_LTDoFqY"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:https",
+          "title": "HTTPS",
+          "description": "HTTPS (Hypertext Transfer Protocol Secure) extends HTTP with SSL/TLS encryption for secure data transmission. Ensures confidentiality, integrity, and authenticity, protecting against interception and tampering. Essential standard for web applications handling sensitive user data.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is HTTPS?",
+              "url": "https://www.cloudflare.com/en-gb/learning/ssl/what-is-https/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "How HTTPS works (comic)",
+              "url": "https://howhttps.works/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "HTTPS explained with carrier pigeons",
+              "url": "https://baida.dev/articles/https-explained-with-carrier-pigeons"
+            },
+            {
+              "type": "VIDEO",
+              "title": "HTTP vs HTTPS",
+              "url": "https://www.youtube.com/watch?v=nOmT_5hqgPk"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:owasp",
+          "title": "OWASP Risks",
+          "description": "OWASP (Open Web Application Security Project) is an online community producing freely-available articles, methodologies, documentation, tools, and technologies for web application security.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "OWASP Website",
+              "url": "https://owasp.org/"
+            },
+            {
+              "type": "GITHUB",
+              "title": "OWASP Application Security Verification Standard",
+              "url": "https://github.com/OWASP/ASVS"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "OWASP Top 10 Security Risks",
+              "url": "https://cheatsheetseries.owasp.org/IndexTopTen.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "OWASP Cheatsheets",
+              "url": "https://cheatsheetseries.owasp.org/cheatsheets/AJAX_Security_Cheat_Sheet.html"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:ssl-tls",
+          "title": "SSL/TLS",
+          "description": "SSL and TLS are cryptographic protocols providing internet communication security through data encryption. SSL is deprecated due to security flaws; modern browsers no longer support it. TLS remains secure and widely supported for encrypted data transmission.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Wikipedia - SSL/TLS",
+              "url": "https://en.wikipedia.org/wiki/Transport_Layer_Security"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Cloudflare - What is SSL?",
+              "url": "https://www.cloudflare.com/learning/ssl/what-is-ssl/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "SSL, TLS, HTTPS Explained",
+              "url": "https://www.youtube.com/watch?v=j9QmMEWmcfo"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:cors",
+          "title": "CORS",
+          "description": "CORS (Cross-Origin Resource Sharing) is a browser security mechanism controlling cross-domain resource access. Uses HTTP headers and preflight requests to determine allowed origins. Extends Same-Origin Policy while preventing unauthorized access to sensitive data.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Cross-Origin Resource Sharing (CORS)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CORS"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Understanding CORS",
+              "url": "https://rbika.com/blog/understanding-cors"
+            },
+            {
+              "type": "VIDEO",
+              "title": "CORS in 100 Seconds",
+              "url": "https://www.youtube.com/watch?v=4KHiSt0oLJ0"
+            },
+            {
+              "type": "VIDEO",
+              "title": "CORS in 6 minutes",
+              "url": "https://www.youtube.com/watch?v=PNtFSVU-YTI"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:server-security",
+          "title": "Server Security",
+          "description": "Server security protects servers from threats through patch management, access control, firewalls, encryption, security hardening, regular backups, and monitoring. Ensures confidentiality, integrity, and availability of data and services with continuous threat detection and response.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is a hardened server?",
+              "url": "https://www.sophos.com/en-us/cybersecurity-explained/what-is-server-hardening"
+            },
+            {
+              "type": "VIDEO",
+              "title": "10 Tips for Hardening your Linux Servers",
+              "url": "https://www.youtube.com/watch?v=Jnxx_IAC0G4"
+            }
+          ]
+        },
+        {
+          "id": "web-security-knowledge:content-security-policy",
+          "title": "CSP",
+          "description": "CSP (Content Security Policy) prevents XSS and code injection attacks by specifying trusted content sources. Implemented via HTTP headers or meta tags, defining rules for scripts, stylesheets, images, and fonts. Reduces malicious code execution risk but requires careful configuration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "MDN — Content Security Policy (CSP)",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Google Devs — Content Security Policy (CSP)",
+              "url": "https://developers.google.com/web/fundamentals/security/csp"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Content Security Policy Explained",
+              "url": "https://www.youtube.com/watch?v=-LjPRzFR5f0"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "CUSTOM",
+          "title": "Visit the Dedicated Cybersecurity Roadmap",
+          "url": "https://roadmap.sh/cyber-security"
+        },
+        {
+          "type": "GITHUB",
+          "title": "OWASP Web Application Security Testing Checklist",
+          "url": "https://github.com/0xRadi/OWASP-Web-Checklist"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Why HTTPS Matters",
+          "url": "https://developers.google.com/web/fundamentals/security/encrypt-in-transit/why-https"
+        },
+        {
+          "type": "VIDEO",
+          "title": "7 Security Risks and Hacking Stories for Web Developers",
+          "url": "https://www.youtube.com/watch?v=4YOpILi9Oxs"
+        }
+      ],
+      "sortOrder": 7
+    },
+    {
+      "id": "testing",
+      "title": "Testing",
+      "description": "Testing systematically evaluates software functionality, performance, and quality against requirements. Includes unit, integration, system, and acceptance testing levels. Can be manual or automated to identify defects, validate features, and ensure reliable performance before deployment.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "testing:integration-testing",
+          "title": "Integration Testing",
+          "description": "Integration testing verifies interactions between software components to ensure they work together correctly. Tests module communication via APIs, databases, and third-party services. Catches integration issues like data mismatches and protocol errors that unit tests miss.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "GITHUB",
+              "title": "Supertest - HTTP Integration Testing for Node.js",
+              "url": "https://github.com/ladjs/supertest"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Integration Testing",
+              "url": "https://www.guru99.com/integration-testing.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "How to Integrate and Test Your Tech Stack",
+              "url": "https://thenewstack.io/how-to-integrate-and-test-your-tech-stack/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Integration Testing in Node.js",
+              "url": "https://www.youtube.com/watch?v=r9HdJ8P6GQI"
+            }
+          ]
+        },
+        {
+          "id": "testing:functional-testing",
+          "title": "Functional Testing",
+          "description": "Functional testing ensures software meets functional requirements through black box testing. Testers provide input and compare expected vs actual output without understanding source code. Contrasts with non-functional testing (performance, load, scalability).",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Playwright - End-to-End Testing Documentation",
+              "url": "https://playwright.dev/docs/intro"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is Functional Testing?",
+              "url": "https://www.guru99.com/functional-testing.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Functional Testing: What It Is and How to Do It Right",
+              "url": "https://www.atlassian.com/continuous-delivery/software-testing/functional-testing"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Functional Testing vs Non-Functional Testing",
+              "url": "https://www.youtube.com/watch?v=NgQT7miTP9M"
+            }
+          ]
+        },
+        {
+          "id": "testing:unit-testing",
+          "title": "Unit Testing",
+          "description": "Unit testing tests individual components or units in isolation to ensure correct functionality. Focuses on smallest testable parts like functions with predefined inputs and expected outcomes. Automated tests written by developers during coding to catch bugs early and improve reliability.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Jest - JavaScript Testing Framework",
+              "url": "https://jestjs.io/docs/getting-started"
+            },
+            {
+              "type": "GITHUB",
+              "title": "JavaScript Testing Best Practices",
+              "url": "https://github.com/goldbergyoni/javascript-testing-best-practices"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is Unit Testing?",
+              "url": "https://www.guru99.com/unit-testing-guide.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Unit Testing?",
+              "url": "https://youtu.be/x95ez7_V7rA?si=JhCVhcEN7zZOkxdp"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "What is Software Testing?",
+          "url": "https://www.guru99.com/software-testing-introduction-importance.html"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Testing Pyramid",
+          "url": "https://www.browserstack.com/guide/testing-pyramid-for-test-automation"
+        },
+        {
+          "type": "CUSTOM",
+          "title": "Explore top posts about Testing",
+          "url": "https://app.daily.dev/tags/testing?ref=roadmapsh"
+        }
+      ],
+      "sortOrder": 8
+    },
+    {
+      "id": "ci-cd",
+      "title": "CI / CD",
+      "description": "CI/CD automates building, testing, and deploying code changes. Continuous Integration merges code frequently with automated builds/tests. Continuous Delivery/Deployment extends this to staging/production. Improves software quality and development efficiency through early issue detection.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "What is CI/CD?",
+          "url": "https://about.gitlab.com/topics/ci-cd/"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "A Primer: Continuous Integration and Continuous Delivery (CI/CD)",
+          "url": "https://thenewstack.io/a-primer-continuous-integration-and-continuous-delivery-ci-cd/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "DevOps CI/CD Explained in 100 Seconds",
+          "url": "https://www.youtube.com/watch?v=scEDHsr3APg"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Automate your Workflows with GitHub Actions",
+          "url": "https://www.youtube.com/watch?v=nyKZTKQS_EQ"
+        }
+      ],
+      "sortOrder": 9
+    },
+    {
+      "id": "more-about-databases",
+      "title": "More about Databases",
+      "description": "A database is a structured collection of useful data that serves as an organizational asset. A database management system (DBMS) is software designed to maintain and extract large data collections efficiently and timely.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "more-about-databases:orms",
+          "title": "ORMs",
+          "description": "ORM (Object-Relational Mapping) allows developers to interact with databases using object-oriented concepts. Maps database tables to classes and rows to objects, eliminating raw SQL queries. Simplifies data manipulation and improves maintainability. Popular ORMs: Hibernate (Java), Entity Framework (.NET), SQLAlchemy (Python).",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is an ORM, how does it work, and how should I use one?",
+              "url": "https://stackoverflow.com/a/1279678"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is an ORM",
+              "url": "https://www.freecodecamp.org/news/what-is-an-orm-the-meaning-of-object-relational-mapping-database-tools/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Why Use an ORM?",
+              "url": "https://www.youtube.com/watch?v=vHt2LC1EM3Q"
+            }
+          ]
+        },
+        {
+          "id": "more-about-databases:database-normalization",
+          "title": "Normalization",
+          "description": "Database normalization structures relational databases using normal forms to reduce data redundancy and improve integrity. Proposed by Edgar F. Codd, it organizes columns and tables to enforce proper dependencies through database constraints via synthesis or decomposition processes.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is Normalization in DBMS (SQL)? 1NF, 2NF, 3NF, BCNF Database with Example",
+              "url": "https://www.guru99.com/database-normalization.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Complete guide to Database Normalization in SQL",
+              "url": "https://www.youtube.com/watch?v=rBPQ5fg_kiY"
+            }
+          ]
+        },
+        {
+          "id": "more-about-databases:acid",
+          "title": "ACID",
+          "description": "ACID represents four database transaction properties: Atomicity (all-or-nothing execution), Consistency (valid state maintenance), Isolation (concurrent transaction separation), and Durability (permanent commit survival). These principles ensure reliable data processing and integrity in database systems, crucial for financial and e-commerce applications.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "BOOK",
+              "title": "Database System Concepts - Silberschatz, Korth, Sudarshan",
+              "url": "https://db-book.com/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "PostgreSQL Tutorial on Transactions",
+              "url": "https://www.postgresql.org/docs/current/tutorial-transactions.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is ACID Compliant Database?",
+              "url": "https://retool.com/blog/whats-an-acid-compliant-database/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "ACID Explained: Atomic, Consistent, Isolated & Durable",
+              "url": "https://www.youtube.com/watch?v=yaQ5YMWkxq4"
+            }
+          ]
+        },
+        {
+          "id": "more-about-databases:failure-modes",
+          "title": "Failure Modes",
+          "description": "Database failure modes include hardware failures, software bugs, data corruption, performance degradation, and distributed system inconsistencies. Common issues: data loss, unavailability, replication lag, deadlocks. Mitigated through redundancy, backups, transaction logging, and failover mechanisms.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "COURSE",
+              "title": "Database Failure Modes",
+              "url": "https://roadmap.sh/ai/course/database-failure-modes-prevention-and-recovery"
+            }
+          ]
+        },
+        {
+          "id": "more-about-databases:transactions",
+          "title": "Transactions",
+          "description": "Database transactions are series of operations executed as atomic units to ensure data integrity. Follow ACID properties: Atomicity (all-or-nothing), Consistency (valid state), Isolation (no interference), Durability (permanent changes). Ensure reliable concurrent operations and data consistency.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What are Transactions?",
+              "url": "https://fauna.com/blog/database-transaction"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "SQL Transactions Tutorial",
+              "url": "https://www.sqlservertutorial.net/sql-server-basics/sql-server-transaction/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is a Database transaction?",
+              "url": "https://www.youtube.com/watch?v=wHUOeXbZCYA"
+            },
+            {
+              "type": "VIDEO",
+              "title": "ACID Properties in Databases With Examples",
+              "url": "https://www.youtube.com/watch?v=GAe5oB742dw"
+            }
+          ]
+        },
+        {
+          "id": "more-about-databases:profiling-performance",
+          "title": "Profiling Perfor.",
+          "description": "Performance profiling analyzes system behavior to identify bottlenecks and optimization opportunities. Collects data on CPU, memory, I/O operations, and execution times. Provides insights into code performance, highlighting slow operations for targeted improvements and enhanced responsiveness.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "How to Profile SQL Queries for Better Performance",
+              "url": "https://servebolt.com/articles/profiling-sql-queries/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Performance Profiling",
+              "url": "https://www.youtube.com/watch?v=MaauQTeGg2k"
+            }
+          ]
+        },
+        {
+          "id": "more-about-databases:n-plus-one-problem",
+          "title": "N+1 Problem",
+          "description": "The N+1 problem occurs when an application retrieves a list then performs additional queries for each item's related data. Results in inefficient query multiplication (1 + N queries instead of optimized joins). Severely impacts performance with larger datasets. Solved through query optimization, joins, or batching techniques.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "In Detail Explanation of N+1 Problem",
+              "url": "https://medium.com/doctolib/understanding-and-fixing-n-1-query-30623109fe89"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is the N+1 Problem",
+              "url": "https://planetscale.com/blog/what-is-n-1-query-problem-and-how-to-solve-it"
+            },
+            {
+              "type": "VIDEO",
+              "title": "SQLite and the N+1 (no) problem",
+              "url": "https://www.youtube.com/watch?v=qPfAQY_RahA"
+            }
+          ]
+        },
+        {
+          "id": "migrations",
+          "title": "Migrations",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "Oracle: What is a Database?",
+          "url": "https://www.oracle.com/database/what-is-database/"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Prisma.io: What are Databases?",
+          "url": "https://www.prisma.io/dataguide/intro/what-are-databases"
+        },
+        {
+          "type": "CUSTOM",
+          "title": "Explore top posts about Backend Development",
+          "url": "https://app.daily.dev/tags/backend?ref=roadmapsh"
+        }
+      ],
+      "sortOrder": 10
+    },
+    {
+      "id": "scaling-databases",
+      "title": "Scaling Databases",
+      "description": "Scaling databases adapts them to handle more data and users efficiently through vertical scaling (upgrading hardware) or horizontal scaling (adding servers). Key techniques include sharding and replication to maintain robustness as databases grow.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "scaling-databases:database-indexes",
+          "title": "Database Indexes",
+          "description": "Database indexes are data structures that speed up data retrieval by creating references to table data without full table scans. Include B-tree, bitmap, and hash types. Enhance query performance but increase storage requirements and slow down writes due to index maintenance.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "PostgreSQL - Indexes",
+              "url": "https://www.postgresql.org/docs/current/indexes.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is a Database Index?",
+              "url": "https://www.codecademy.com/article/sql-indexes"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Use the Index, Luke! - A Guide to Database Performance for Developers",
+              "url": "https://use-the-index-luke.com/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Database Indexing Explained",
+              "url": "https://www.youtube.com/watch?v=-qNSXK7s7_w"
+            }
+          ]
+        },
+        {
+          "id": "scaling-databases:sharding-strategies",
+          "title": "Sharding Strategies",
+          "description": "Sharding splits large datasets into smaller chunks (logical shards) distributed across different machines/database nodes to distribute traffic load. Improves application scalability. Supported by many but not all databases.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Wikipedia - Sharding in Database Architectures",
+              "url": "https://en.wikipedia.org/wiki/Shard_(database_architecture"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "How sharding a database can make it faster",
+              "url": "https://stackoverflow.blog/2022/03/14/how-sharding-a-database-can-make-it-faster/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Database Sharding?",
+              "url": "https://www.youtube.com/watch?v=XP98YCr-iXQ"
+            }
+          ]
+        },
+        {
+          "id": "scaling-databases:data-replication",
+          "title": "Data Replication",
+          "description": "Data replication creates multiple copies of data across distributed system nodes for availability, reliability, and performance. Can be synchronous or asynchronous. Uses master-slave, multi-master, or peer-to-peer models. Improves fault tolerance but challenges data consistency.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Data Replication? - IBM",
+              "url": "https://www.ibm.com/topics/data-replication"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Data Replication?",
+              "url": "https://www.youtube.com/watch?v=iO8a1nMbL1o"
+            }
+          ]
+        },
+        {
+          "id": "scaling-databases:cap-theorem",
+          "title": "CAP Theorem",
+          "description": "CAP Theorem states distributed systems can only guarantee two of three properties: Consistency (same data across nodes), Availability (system responds to requests), and Partition tolerance (operates despite network failures). Guides distributed system design decisions and database selection.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is CAP Theorem?",
+              "url": "https://www.bmc.com/blogs/cap-theorem/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "An Illustrated Proof of the CAP Theorem",
+              "url": "https://mwhittaker.github.io/blog/an_illustrated_proof_of_the_cap_theorem/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "CAP Theorem and its applications in NoSQL Databases",
+              "url": "https://www.ibm.com/uk-en/cloud/learn/cap-theorem"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is CAP Theorem?",
+              "url": "https://www.youtube.com/watch?v=_RbsFXWRZ10"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "Strategies for Scaling Databases: A Comprehensive Guide",
+          "url": "https://medium.com/@anil.goyal0057/strategies-for-scaling-databases-a-comprehensive-guide-b69cda7df1d3"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Horizontal vs. Vertical Scaling - How to Scale a Database",
+          "url": "https://www.freecodecamp.org/news/horizontal-vs-vertical-scaling-in-database/"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Database Replication Explained",
+          "url": "https://towardsdatascience.com/database-replication-explained-5c76a200d8f3"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Database Scaling Strategies for Beginners",
+          "url": "https://www.youtube.com/watch?v=dkhOZOmV7Fo"
+        }
+      ],
+      "sortOrder": 11
+    },
+    {
+      "id": "architectural-patterns",
+      "title": "Architectural Patterns",
+      "description": "Architectural patterns are reusable solutions to common software architecture problems. They address issues like performance limitations, high availability, and business risk minimization, providing proven templates for system design and structure.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "architectural-patterns:monolithic-apps",
+          "title": "Monolithic Apps",
+          "description": "Monolithic applications are single, cohesive units with tightly integrated components running as one service. Simplifies development and deployment but creates scalability and maintainability challenges. Changes require full system redeployment. Suitable for smaller applications; larger ones often transition to microservices.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Pattern: Monolithic Architecture",
+              "url": "https://microservices.io/patterns/monolithic.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Monolithic Architecture - Advantages & Disadvantages",
+              "url": "https://datamify.medium.com/monolithic-architecture-advantages-and-disadvantages-e71a603eec89"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Monolithic vs Microservice Architecture",
+              "url": "https://www.youtube.com/watch?v=NdeTGlZ__Do"
+            }
+          ]
+        },
+        {
+          "id": "architectural-patterns:serverless",
+          "title": "Serverless",
+          "description": "Serverless computing lets developers build applications without managing server infrastructure. Cloud providers handle scaling and maintenance while developers deploy event-triggered functions. Billing based on actual usage. Platforms: AWS Lambda, Google Cloud Functions, Azure Functions.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Serverless",
+              "url": "https://www.ibm.com/cloud/learn/serverless"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "AWS Services",
+              "url": "https://aws.amazon.com/serverless/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Serverless Computing in 100 Seconds",
+              "url": "https://www.youtube.com/watch?v=W_VV2Fx32_Y&ab_channel=Fireship"
+            }
+          ]
+        },
+        {
+          "id": "architectural-patterns:microservices",
+          "title": "Microservices",
+          "description": "Microservices architecture structures applications as loosely coupled, independently deployable services focused on specific business capabilities. Communicate via HTTP or messaging. Enables scalability, flexibility, diverse technologies, and continuous deployment but adds complexity in communication and orchestration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Pattern: Microservice Architecture",
+              "url": "https://microservices.io/patterns/microservices.html"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is Microservices?",
+              "url": "https://smartbear.com/solutions/microservices/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Microservices 101",
+              "url": "https://thenewstack.io/microservices-101/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Microservices explained in 5 minutes",
+              "url": "https://www.youtube.com/watch?v=lL_j7ilk7rc"
+            }
+          ]
+        },
+        {
+          "id": "architectural-patterns:service-mesh",
+          "title": "Service Mesh",
+          "description": "Service mesh enhances communication, security, and management between microservices using intelligent proxies. Provides load balancing, service discovery, observability, and traffic management. Uses sidecar pattern where each microservice pairs with a proxy for independent network functionality management.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is a Service Mesh (AWS blog)?",
+              "url": "https://aws.amazon.com/what-is/service-mesh/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is a Service Mesh (RedHat blog)?",
+              "url": "https://www.redhat.com/en/topics/microservices/what-is-a-service-mesh"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is a Service Mesh?",
+              "url": "https://www.youtube.com/watch?v=vh1YtWjfcyk"
+            }
+          ]
+        },
+        {
+          "id": "architectural-patterns:soa",
+          "title": "SOA",
+          "description": "SOA (Service-Oriented Architecture) uses reusable, loosely coupled services that interact over networks through standardized protocols like HTTP and XML. Each service performs specific business functions independently. Enables scalable, flexible, interoperable systems with modular development and easier integration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is SOA?",
+              "url": "https://aws.amazon.com/what-is/service-oriented-architecture/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Reference Architecture Foundation for Service Oriented Architecture",
+              "url": "http://docs.oasis-open.org/soa-rm/soa-ra/v1.0/soa-ra.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Service Oriented Architecture (SOA) Simplified",
+              "url": "https://www.youtube.com/watch?v=PA9RjHI463g"
+            }
+          ]
+        },
+        {
+          "id": "architectural-patterns:twelve-factor-apps",
+          "title": "Twelve Factor Apps",
+          "description": "Twelve-Factor App methodology provides principles for building scalable, maintainable cloud applications. Key factors: single codebase, explicit dependencies, environment config, stateless processes, port binding, dev/prod parity, log streams, and graceful shutdown for portability and deployment ease.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "The Twelve-Factor App",
+              "url": "https://12factor.net/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "An illustrated guide to 12 Factor Apps",
+              "url": "https://www.redhat.com/architect/12-factor-app"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Every Developer NEEDS To Know 12-Factor App Principles",
+              "url": "https://www.youtube.com/watch?v=FryJt0Tbt9Q"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "14 Architectural Patterns to know - Red Hat",
+          "url": "https://www.redhat.com/architect/14-software-architecture-patterns"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "10 Common Software Architectural Patterns in a nutshell",
+          "url": "https://towardsdatascience.com/10-common-software-architectural-patterns-in-a-nutshell-a0b47a1e9013"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Software Architecture Patterns - O'Reilly",
+          "url": "https://www.oreilly.com/library/view/software-architecture-patterns/9781491971437/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "10 Architecture Patterns Used In Enterprise Software Development Today",
+          "url": "https://www.youtube.com/watch?v=BrT3AO8bVQY"
+        }
+      ],
+      "sortOrder": 12
+    },
+    {
+      "id": "design-and-development-principles",
+      "title": "Design and Development Principles",
+      "description": "",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "design-and-development-principles:gof-design-patterns",
+          "title": "GOF Design Patterns",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "design-and-development-principles:cqrs",
+          "title": "CQRS",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "design-and-development-principles:domain-driven-design",
+          "title": "Domain Driven Design",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "design-and-development-principles:event-sourcing",
+          "title": "Event Sourcing",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "design-and-development-principles:test-driven-development",
+          "title": "Test Driven Development",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        }
+      ],
+      "resources": [],
+      "sortOrder": 13
+    },
+    {
+      "id": "containerization",
+      "title": "Containerization vs Virtualization",
+      "description": "",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "containerization:lxc",
+          "title": "LXC",
+          "description": "LXC (Linux Containers) runs multiple Linux systems virtually on a single Linux kernel. Provides userspace interface for kernel containment features with powerful API and simple tools for creating and managing system or application containers.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "LXC Documentation",
+              "url": "https://linuxcontainers.org/lxc/documentation/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is LXC?",
+              "url": "https://linuxcontainers.org/lxc/introduction/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Getting Started with LXD Containerization",
+              "url": "https://www.youtube.com/watch?v=aIwgPKkVj8s"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Getting Started with LXC containers",
+              "url": "https://youtu.be/CWmkSj_B-wo"
+            }
+          ]
+        }
+      ],
+      "resources": [],
+      "sortOrder": 14
+    },
+    {
+      "id": "message-brokers",
+      "title": "Message Brokers",
+      "description": "Message brokers facilitate communication between distributed systems by routing and delivering messages. Enable asynchronous messaging, decoupling producers from consumers. Include features like queuing, load balancing, persistence, and acknowledgment. Popular examples: Kafka, RabbitMQ, ActiveMQ.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "message-brokers:rabbitmq",
+          "title": "RabbitMQ",
+          "description": "RabbitMQ is an open-source message broker using AMQP for asynchronous communication between distributed systems. Enables message queuing, routing, durability, and acknowledgments. Supports various messaging patterns (pub/sub, request/reply, point-to-point). Used for high-throughput enterprise messaging.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "RabbitMQ Tutorials",
+              "url": "https://www.rabbitmq.com/getstarted.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "RabbitMQ Tutorial - Message Queues and Distributed Systems",
+              "url": "https://www.youtube.com/watch?v=nFxjaVmFj5E"
+            },
+            {
+              "type": "VIDEO",
+              "title": "RabbitMQ in 100 Seconds",
+              "url": "https://m.youtube.com/watch?v=NQ3fZtyXji0"
+            }
+          ]
+        },
+        {
+          "id": "message-brokers:kafka",
+          "title": "Kafka",
+          "description": "Apache Kafka is a distributed event streaming platform for high-throughput, fault-tolerant data processing. Acts as message broker with publish/subscribe model. Features topics, partitions for parallel processing, and replication for fault tolerance. Ideal for real-time analytics and data integration.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Apache Kafka",
+              "url": "https://kafka.apache.org/quickstart"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Apache Kafka Streams",
+              "url": "https://kafka.apache.org/documentation/streams/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Kafka Streams Confluent",
+              "url": "https://docs.confluent.io/platform/current/streams/concepts.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Apache Kafka Fundamentals",
+              "url": "https://www.youtube.com/watch?v=B5j3uNBH8X4"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "What are Message Brokers?",
+          "url": "https://www.ibm.com/topics/message-brokers"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Introduction to Message Brokers",
+          "url": "https://www.youtube.com/watch?v=57Qr9tk6Uxc"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Kafka vs RabbitMQ",
+          "url": "https://www.youtube.com/watch?v=_5mu7lZz5X4"
+        }
+      ],
+      "sortOrder": 15
+    },
+    {
+      "id": "search-engines",
+      "title": "Search Engines",
+      "description": "Search engines like Elasticsearch are specialized tools for fast, scalable searching and analyzing large data volumes. Built on Apache Lucene, they offer full-text search, real-time indexing, distributed architecture, powerful query DSL, and analytics capabilities for log and event data analysis.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "search-engines:elasticsearch",
+          "title": "Elasticsearch",
+          "description": "Elasticsearch is a document-oriented search engine and database supporting INSERT, DELETE, RETRIEVE operations and analytics. Unlike general databases, it's optimized for search with powerful features for fast data retrieval based on search criteria.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit the Dedicated Elasticsearch Roadmap",
+              "url": "https://roadmap.sh/elasticsearch"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Elasticsearch Website",
+              "url": "https://www.elastic.co/elasticsearch/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Elasticsearch Documentation",
+              "url": "https://www.elastic.co/guide/index.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Elasticsearch",
+              "url": "https://www.youtube.com/watch?v=ZP0NmfyfsoM"
+            }
+          ]
+        },
+        {
+          "id": "search-engines:solr",
+          "title": "Solr",
+          "description": "Solr is an open-source, scalable search platform built on Apache Lucene for full-text search, faceted search, and real-time indexing. Supports complex queries, distributed searching, text analysis, highlighting, and geographic search. Used for search engines and data retrieval systems.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "GITHUB",
+              "title": "Solr on GitHub",
+              "url": "https://github.com/apache/solr"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Solr Website",
+              "url": "https://solr.apache.org/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Solr Documentation",
+              "url": "https://solr.apache.org/resources.html#documentation"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Apache Solr vs Elasticsearch Differences",
+              "url": "https://www.youtube.com/watch?v=MMWBdSdbu5k"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "CUSTOM",
+          "title": "Visit the Dedicated Elasticsearch Roamdap",
+          "url": "https://roadmap.sh/elasticsearch"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "What is Elasticsearch? - Official Docs",
+          "url": "https://www.elastic.co/guide/en/elasticsearch/reference/current/elasticsearch-intro.html"
+        },
+        {
+          "type": "DOCUMENTATION",
+          "title": "Intro to OpenSearch",
+          "url": "https://opensearch.org/docs/latest/getting-started/intro/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Elasticsearch Tutorial for Beginners",
+          "url": "https://www.youtube.com/watch?v=ZP0NmfyNsuo"
+        }
+      ],
+      "sortOrder": 16
+    },
+    {
+      "id": "web-servers",
+      "title": "Web Servers",
+      "description": "Web servers handle client requests and serve web content like HTML pages and images. Process HTTP/HTTPS requests, interact with databases, and send responses. Popular servers include Apache, Nginx, and IIS. Essential for hosting websites, managing traffic, and providing SSL/TLS security.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "web-servers:nginx",
+          "title": "Nginx",
+          "description": "Nginx is a high-performance web server and reverse proxy known for efficiency and low resource consumption. Also used as load balancer, HTTP cache, and mail proxy. Excels at concurrent connections via asynchronous, event-driven architecture. Popular for modern web infrastructures.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Nginx Website",
+              "url": "https://nginx.org/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "NGINX Explained in 100 Seconds",
+              "url": "https://www.youtube.com/watch?v=JKxlsvZXG7c"
+            },
+            {
+              "type": "VIDEO",
+              "title": "NGINX Tutorial for Beginners",
+              "url": "https://www.youtube.com/watch?v=9t9Mp0BGnyI"
+            }
+          ]
+        },
+        {
+          "id": "web-servers:caddy",
+          "title": "Caddy",
+          "description": "Caddy is a modern Go-based web server known for simplicity and automatic HTTPS with Let's Encrypt certificates. Features zero-config static file serving, HTTP/2 support, and plugins for reverse proxying and load balancing. Ideal for small-to-medium projects requiring hassle-free setup.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Caddy Server",
+              "url": "https://caddyserver.com/"
+            },
+            {
+              "type": "GITHUB",
+              "title": "caddyserver/caddy - Caddy on GitHub",
+              "url": "https://github.com/caddyserver/caddy"
+            },
+            {
+              "type": "VIDEO",
+              "title": "How to Make a Simple Caddy 2 Website",
+              "url": "https://www.youtube.com/watch?v=WgUV_BlHvj0"
+            }
+          ]
+        },
+        {
+          "id": "web-servers:apache",
+          "title": "Apache",
+          "description": "Apache HTTP Server is a popular open-source web server known for flexibility and extensive features. It supports multiple OS platforms, offers virtual hosting, SSL/TLS, and modular architecture. Part of the LAMP stack, it remains widely used despite competition from Nginx due to stability and community support.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Apache Server",
+              "url": "https://httpd.apache.org/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Apache Server Documentation",
+              "url": "https://httpd.apache.org/docs/2.4/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Apache Web Server?",
+              "url": "https://www.youtube.com/watch?v=kaaenHXO4t4"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Apache vs NGINX",
+              "url": "https://www.youtube.com/watch?v=9nyiY-psbMs"
+            }
+          ]
+        },
+        {
+          "id": "web-servers:ms-iis",
+          "title": "MS IIS",
+          "description": "Microsoft IIS is a flexible, secure web server for hosting web applications on Windows Server. Supports [ASP.NET](http://ASP.NET), PHP, static content with features like authentication, SSL/TLS, URL rewriting. Offers GUI and command-line management tools for enterprise Windows-based deployments.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Microsoft -IIS",
+              "url": "https://www.iis.net/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Learn Windows Web Server IIS",
+              "url": "https://www.youtube.com/watch?v=1VdxPWwtISA"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is IIS?",
+              "url": "https://www.youtube.com/watch?v=hPWSqEXOjQY"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "What is a Web Server? - Mozilla",
+          "url": "https://developer.mozilla.org/en-US/docs/Learn/Common_questions/What_is_a_web_server"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "What is a Web Server?",
+          "url": "https://www.hostinger.co.uk/tutorials/what-is-a-web-server"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Web Server Concepts and Examples",
+          "url": "https://youtu.be/9J1nJOivdyw"
+        }
+      ],
+      "sortOrder": 17
+    },
+    {
+      "id": "real-time-data",
+      "title": "Real-Time Data",
+      "description": "Real-time data is processed and delivered immediately with minimal delay for prompt system responses. Essential for financial trading, gaming, analytics, and monitoring. Uses stream processing frameworks like Apache Kafka and Flink for high-speed data flows and timely decision-making.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "web-sockets",
+          "title": "WebSockets",
+          "description": "WebSockets enable full-duplex, real-time communication over a single persistent connection between client and server. Unlike HTTP's request-response cycles, allows continuous bidirectional data exchange. Ideal for live chat, gaming, and real-time updates with low-latency communication.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Socket.io Library Bidirectional and Low-latency Communication for Every Platform",
+              "url": "https://socket.io/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Introduction to WebSockets",
+              "url": "https://www.tutorialspoint.com/websockets/index.htm"
+            },
+            {
+              "type": "VIDEO",
+              "title": "A Beginners Guide to WebSockets",
+              "url": "https://www.youtube.com/watch?v=8ARodQ4Wlf4"
+            },
+            {
+              "type": "VIDEO",
+              "title": "How Web Sockets Work",
+              "url": "https://www.youtube.com/watch?v=G0_e02DdH7I"
+            }
+          ]
+        },
+        {
+          "id": "server-sent-events",
+          "title": "Server Sent Events",
+          "description": "Server-Sent Events (SSE) sends real-time updates from server to client over persistent HTTP connection. Enables efficient server push with automatic reconnection. Ideal for one-way communication like live notifications using simple text-based format and EventSource API.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Server Sent Events - MDN",
+              "url": "https://developer.mozilla.org/en-US/docs/Web/API/Server-sent_events"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Server-Sent Events | Postman Level Up",
+              "url": "https://www.youtube.com/watch?v=KrE044J8jEQ&t=1s"
+            }
+          ]
+        },
+        {
+          "id": "long-polling",
+          "title": "Long Polling",
+          "description": "Long polling technique where server holds client requests instead of sending empty responses. Server waits for specified period for new data, responding immediately when available or after timeout. Client then immediately re-requests, creating continuous request-response cycles.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Long Polling",
+              "url": "https://javascript.info/long-polling"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Long Polling?",
+              "url": "https://www.youtube.com/watch?v=LD0_-uIsnOE"
+            }
+          ]
+        },
+        {
+          "id": "short-polling",
+          "title": "Short Polling",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "Real-time Data - Wiki",
+          "url": "https://en.wikipedia.org/wiki/Real-time_data"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "What is Real-time Data?",
+          "url": "https://www.qlik.com/us/streaming-data/real-time-data"
+        }
+      ],
+      "sortOrder": 18
+    },
+    {
+      "id": "dynamodb",
+      "title": "DynamoDB",
+      "description": "AWS DynamoDB is a fully managed, serverless NoSQL database supporting key-value and document models. Offers single-digit millisecond latency, automatic scaling, global tables, and seamless scalability. Ideal for high-traffic web apps, gaming, mobile, and IoT solutions.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "DOCUMENTATION",
+          "title": "AWS DynamoDB",
+          "url": "https://aws.amazon.com/dynamodb/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "AWS DynamoDB Tutorial For Beginners",
+          "url": "https://www.youtube.com/watch?v=2k2GINpO308"
+        }
+      ],
+      "sortOrder": 19
+    },
+    {
+      "id": "couchdb",
+      "title": "CouchDB",
+      "description": "Apache CouchDB is a document-oriented NoSQL database using JSON for data storage, JavaScript MapReduce for queries, and HTTP for API access. Stores independent documents with self-contained schemas instead of relational tables.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "DOCUMENTATION",
+          "title": "CouchDB",
+          "url": "https://couchdb.apache.org/"
+        },
+        {
+          "type": "DOCUMENTATION",
+          "title": "CouchDB Documentation",
+          "url": "https://docs.couchdb.org/en/stable/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "What is CouchDB?",
+          "url": "https://www.youtube.com/watch?v=Mru4sHzIfSA"
+        }
+      ],
+      "sortOrder": 20
+    },
+    {
+      "id": "nosql-databases",
+      "title": "NoSQL Databases",
+      "description": "NoSQL databases handle unstructured, semi-structured, or rapidly changing data with flexible schemas. Four types: Document stores (MongoDB, CouchDB), Key-value stores (Redis, Riak), Column-family (Cassandra, HBase), and Graph databases (Neo4j, Neptune). Used for high scalability, flexibility, and performance applications.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "nosql-databases:document-databases",
+          "title": "MongoDB",
+          "description": "MongoDB is a NoSQL document-oriented database storing data in BSON format without fixed schemas. Supports horizontal scaling via sharding and high availability through replica sets. Ideal for applications with evolving data structures, real-time analytics, and large-scale data handling.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated MongoDB Roadmap",
+              "url": "https://roadmap.sh/mongodb"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Learning Path for MongoDB Developers",
+              "url": "https://learn.mongodb.com/catalog"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "MongoDB Online Sandbox",
+              "url": "https://mongoplayground.net/"
+            }
+          ]
+        },
+        {
+          "id": "nosql-databases:key-value-databases",
+          "title": "Redis",
+          "description": "Redis is an open-source, in-memory data structure store supporting strings, lists, sets, hashes, and sorted sets. Used for caching, session management, real-time analytics, and message brokering. Offers persistence, replication, clustering, and low-latency high-throughput performance.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "CUSTOM",
+              "title": "Visit Dedicated Redis Roadmap",
+              "url": "https://roadmap.sh/redis"
+            },
+            {
+              "type": "COURSE",
+              "title": "Redis Crash Course",
+              "url": "https://www.youtube.com/watch?v=XCsS_NVAa1g"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Redis Documentation",
+              "url": "https://redis.io/docs/latest/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Redis Tutorial for Beginners",
+              "url": "https://www.youtube.com/watch?v=jgpVdJB2sKQ"
+            }
+          ]
+        },
+        {
+          "id": "nosql-databases:realtime-databases",
+          "title": "Firebase",
+          "description": "Firebase is Google's comprehensive mobile and web development platform offering real-time database, authentication, cloud storage, hosting, and analytics. Features serverless architecture, real-time synchronization, multiple auth providers, and development tools for testing and monitoring.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "COURSE",
+              "title": "The Ultimate Guide to Firebase",
+              "url": "https://fireship.io/lessons/the-ultimate-beginners-guide-to-firebase/"
+            },
+            {
+              "type": "DOCUMENTATION",
+              "title": "Firebase Documentation",
+              "url": "https://firebase.google.com/docs"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Firebase in 100 seconds",
+              "url": "https://www.youtube.com/watch?v=vAoB4VbhRzM"
+            }
+          ]
+        },
+        {
+          "id": "nosql-databases:timeseries-databases",
+          "title": "Influx DB",
+          "description": "InfluxDB is a high-performance, open-source time-series database for handling timestamped data like metrics and events. Optimized for monitoring, IoT, and APM with SQL-like Flux queries. Features retention policies, downsampling, and automatic compaction for scalable time-series storage.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "InfluxDB Documentation",
+              "url": "https://docs.influxdata.com/influxdb/cloud/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Time series database",
+              "url": "https://www.influxdata.com/time-series-database/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Introduction to InfluxDB - DigitalOcean",
+              "url": "https://www.digitalocean.com/community/tutorials/how-to-monitor-system-metrics-with-the-tick-stack-on-centos-7"
+            },
+            {
+              "type": "VIDEO",
+              "title": "The Basics of Time Series Data",
+              "url": "https://www.youtube.com/watch?v=wBWTj-1XiRU"
+            }
+          ]
+        },
+        {
+          "id": "nosql-databases:column-databases",
+          "title": "Cassandra",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "NoSQL Explained",
+          "url": "https://www.mongodb.com/nosql-explained"
+        },
+        {
+          "type": "VIDEO",
+          "title": "How do NoSQL Databases work",
+          "url": "https://www.youtube.com/watch?v=0buKQHokLK8"
+        },
+        {
+          "type": "VIDEO",
+          "title": "SQL vs NoSQL Explained",
+          "url": "https://www.youtube.com/watch?v=ruz-vK8IesE"
+        }
+      ],
+      "sortOrder": 21
+    },
+    {
+      "id": "rethinkdb",
+      "title": "RethinkDB",
+      "description": "RethinkDB is an open-source, distributed NoSQL database for real-time applications. Features changefeed for automatic data update notifications, JSON document model, rich queries with joins and aggregations. Supports horizontal scaling through sharding and replication. After the original company shut down in 2016, the project was open-sourced and is now maintained by the community, with releases continuing as recently as 2023.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "COURSE",
+          "title": "RethinkDB Crash Course",
+          "url": "https://www.youtube.com/watch?v=pW3PFtchHDc"
+        },
+        {
+          "type": "DOCUMENTATION",
+          "title": "RethinkDB Website",
+          "url": "https://rethinkdb.com/"
+        },
+        {
+          "type": "DOCUMENTATION",
+          "title": "Ten-minute Guide with RethinkDB",
+          "url": "https://rethinkdb.com/docs/guide/"
+        }
+      ],
+      "sortOrder": 22
+    },
+    {
+      "id": "graph-databases",
+      "title": "Neo4j",
+      "description": "Neo4j is an open-source graph database storing data as interconnected nodes and relationships rather than tables. Uses Cypher query language for efficient graph traversal and pattern matching. Ideal for complex relationship applications like social networks, recommendations, and fraud detection.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "DOCUMENTATION",
+          "title": "Neo4j Website",
+          "url": "https://neo4j.com"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Neo4j in 100 Seconds",
+          "url": "https://www.youtube.com/watch?v=T6L9EoBy8Zk"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Neo4j Course for Beginners",
+          "url": "https://www.youtube.com/watch?v=_IgbB24scLI"
+        }
+      ],
+      "sortOrder": 23
+    },
+    {
+      "id": "base",
+      "title": "Base",
+      "description": "",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [],
+      "sortOrder": 24
+    },
+    {
+      "id": "timescale",
+      "title": "TimeScale",
+      "description": "TimescaleDB is an open-source time-series database built as PostgreSQL extension. Handles large volumes of time-stamped data efficiently for monitoring, IoT, and financial applications. Features efficient ingestion, time-based queries, automatic partitioning (hypertables), and complex aggregations.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "DOCUMENTATION",
+          "title": "Timescale Website",
+          "url": "https://www.timescale.com/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Tutorial - TimeScaleDB Explained in 100 Seconds",
+          "url": "https://www.youtube.com/watch?v=69Tzh_0lHJ8"
+        },
+        {
+          "type": "VIDEO",
+          "title": "What is Time Series Data?",
+          "url": "https://www.youtube.com/watch?v=Se5ipte9DMY"
+        }
+      ],
+      "sortOrder": 25
+    },
+    {
+      "id": "aws-neptune",
+      "title": "AWS Neptune",
+      "description": "AWS Neptune is a fully managed graph database supporting property graph and RDF models. Uses Gremlin and SPARQL query languages for complex relationships in social networks, recommendations, and fraud detection. Offers high availability, multi-AZ replication, and up to 15 read replicas.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "DOCUMENTATION",
+          "title": "AWS Neptune",
+          "url": "https://aws.amazon.com/neptune/"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "Setting Up Amazon Neptune Graph Database",
+          "url": "https://cliffordedsouza.medium.com/setting-up-amazon-neptune-graph-database-2b73512a7388"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Getting Started with Neptune Serverless",
+          "url": "https://www.youtube.com/watch?v=b04-jjM9t4g"
+        }
+      ],
+      "sortOrder": 26
+    },
+    {
+      "id": "scalability",
+      "title": "Building For Scale",
+      "description": "Scalability is a system's ability to handle growing workload by adding resources. Scalable architecture supports higher workloads without fundamental changes. Two approaches: on-premises (requires planning) or cloud (flexible, easy upgrades). Cloud offers more flexibility than on-premises infrastructure.",
+      "difficulty": 1,
+      "estHours": 2,
+      "children": [
+        {
+          "id": "scalability:mitigation-strategies:graceful-degradation",
+          "title": "Graceful Degradation",
+          "description": "Graceful degradation ensures systems continue functioning when components or features are unavailable. In web development, applications remain functional even if browsers don't support certain features. Alternative to progressive enhancement for maintaining system reliability.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is Graceful Degradation & Why Does it Matter?",
+              "url": "https://blog.hubspot.com/website/graceful-degradation"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Four Considerations When Designing Systems For Graceful Degradation",
+              "url": "https://newrelic.com/blog/best-practices/design-software-for-graceful-degradation"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Graceful Degradation - Georgia Tech",
+              "url": "https://www.youtube.com/watch?v=Tk7e0LMsAlI"
+            }
+          ]
+        },
+        {
+          "id": "scalability:mitigation-strategies:throttling",
+          "title": "Throttling",
+          "description": "Throttling controls the rate of request processing to prevent system overload by setting limits on requests per time period. Manages resource consumption, ensures fair usage, maintains stability, and protects against abuse. Commonly used in APIs, networks, and databases.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Throttling - AWS Well-Architected Framework",
+              "url": "https://docs.aws.amazon.com/wellarchitected/2022-03-31/framework/rel_mitigate_interaction_failure_throttle_requests.html"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Throttling vs Debouncing",
+              "url": "https://www.youtube.com/watch?v=tJhA0DrH5co"
+            }
+          ]
+        },
+        {
+          "id": "scalability:mitigation-strategies:backpressure",
+          "title": "Backpressure",
+          "description": "Backpressure is a flow control mechanism where receivers signal their capacity to senders, preventing system overload. It manages resource allocation, prevents memory overflows, and maintains responsiveness in reactive programming, message queues, and streaming systems.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Awesome Architecture: Backpressure",
+              "url": "https://awesome-architecture.com/back-pressure/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Backpressure explained — the flow of data through software",
+              "url": "https://medium.com/@jayphelps/backpressure-explained-the-flow-of-data-through-software-2350b3e77ce7"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Handling Backpressure in Node.js Streams",
+              "url": "https://nodejs.org/en/docs/guides/backpressuring-in-streams"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is Back Pressure",
+              "url": "https://www.youtube.com/watch?v=viTGm_cV7lE"
+            }
+          ]
+        },
+        {
+          "id": "scalability:mitigation-strategies:loadshifting",
+          "title": "Loadshifting",
+          "description": "Load shifting manages computing workloads by redistributing load from peak to off-peak periods. Helps balance resource demand, optimize performance, and reduce costs through job rescheduling, region switching, and dynamic resource allocation. Enhances system reliability and infrastructure utilization.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "Load Shifting",
+              "url": "https://en.wikipedia.org/wiki/Load_shifting"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Load Shifting 101",
+              "url": "https://www.youtube.com/watch?v=DOyMJEdk5aE"
+            }
+          ]
+        },
+        {
+          "id": "scalability:mitigation-strategies:circuit-breaker",
+          "title": "Circuit Breaker",
+          "description": "Circuit breaker pattern protects systems from failures by temporarily stopping operations when overloaded. Has three states: closed (normal), open (stopped operations), and half-open (testing recovery). Prevents cascading failures in distributed systems.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "DOCUMENTATION",
+              "title": "Circuit Breaker - Azure Architecture Patterns",
+              "url": "https://learn.microsoft.com/en-us/azure/architecture/patterns/circuit-breaker"
+            },
+            {
+              "type": "GITHUB",
+              "title": "Resilience4j - Circuit Breaker Library for Java",
+              "url": "https://github.com/resilience4j/resilience4j"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "The Circuit Breaker Pattern",
+              "url": "https://aerospike.com/blog/circuit-breaker-pattern/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is the Circuit Breaker Pattern?",
+              "url": "https://www.youtube.com/watch?v=ADHcBxEXvFA"
+            }
+          ]
+        },
+        {
+          "id": "scalability:migration-strategies",
+          "title": "Migration Strategies",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "scalability:horizontal-vertical-scaling",
+          "title": "Types of Scaling",
+          "description": "",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": []
+        },
+        {
+          "id": "scalability:instrumentation-monitoring-telemetry",
+          "title": "Instrumentation",
+          "description": "Instrumentation embeds code to capture metrics, logs, and traces. Monitoring observes real-time metrics for anomalies and performance issues using dashboards and alerts. Telemetry automates data collection from distributed systems. Together they provide system health insights and proactive issue resolution.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "What is Instrumentation?",
+              "url": "https://en.wikipedia.org/wiki/Instrumentation_%28computer_programming%29"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is Monitoring?",
+              "url": "https://www.yottaa.com/performance-monitoring-backend-vs-front-end-solutions/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "What is Telemetry?",
+              "url": "https://www.sumologic.com/insight/what-is-telemetry/"
+            },
+            {
+              "type": "VIDEO",
+              "title": "Observability vs. APM vs. Monitoring",
+              "url": "https://www.youtube.com/watch?v=CAQ_a2-9UOI"
+            },
+            {
+              "type": "CUSTOM",
+              "title": "Explore top posts about Monitoring",
+              "url": "https://app.daily.dev/tags/monitoring?ref=roadmapsh"
+            }
+          ]
+        },
+        {
+          "id": "scalability:observability",
+          "title": "Observability",
+          "description": "Observability monitors system internal state through external outputs like metrics, logs, and traces. Involves collecting, analyzing, and visualizing data for performance insights, anomaly detection, and troubleshooting. Enables proactive management and rapid issue response.",
+          "difficulty": 1,
+          "estHours": 1,
+          "resources": [
+            {
+              "type": "ARTICLE",
+              "title": "DataDog Docs",
+              "url": "https://docs.datadoghq.com/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Sentry Docs",
+              "url": "https://docs.sentry.io/"
+            },
+            {
+              "type": "ARTICLE",
+              "title": "Observability and Instrumentation: What They Are and Why They Matter",
+              "url": "https://newrelic.com/blog/best-practices/observability-instrumentation"
+            },
+            {
+              "type": "VIDEO",
+              "title": "What is observability?",
+              "url": "https://www.youtube.com/watch?v=--17See0KHs"
+            }
+          ]
+        }
+      ],
+      "resources": [
+        {
+          "type": "ARTICLE",
+          "title": "Scalable Architecture: A Definition and How-To Guide",
+          "url": "https://www.sentinelone.com/blog/scalable-architecture/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Scaling Distributed Systems - Software Architecture Introduction",
+          "url": "https://www.youtube.com/watch?v=gxfERVP18-g"
+        }
+      ],
+      "sortOrder": 27
+    },
+    {
+      "id": "monitoring",
+      "title": "Monitoring",
+      "description": "Monitoring involves continuously collecting, analyzing, and alerting on metrics, logs, and traces from applications and infrastructure. It helps detect issues early, understand performance bottlenecks, and ensure system reliability. Key tools include Prometheus for metrics collection, Grafana for dashboards and visualization, and distributed tracing tools like Jaeger or Zipkin.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "DOCUMENTATION",
+          "title": "Prometheus Documentation",
+          "url": "https://prometheus.io/docs/introduction/overview/"
+        },
+        {
+          "type": "DOCUMENTATION",
+          "title": "Grafana Documentation",
+          "url": "https://grafana.com/docs/grafana/latest/"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Prometheus and Grafana Tutorial for Beginners",
+          "url": "https://www.youtube.com/watch?v=9TJx7QTrTyo"
+        },
+        {
+          "type": "VIDEO",
+          "title": "Grafana Explained in 5 Minutes",
+          "url": "https://www.youtube.com/watch?v=lILY8eSspEo"
+        }
+      ],
+      "sortOrder": 28
+    },
+    {
+      "id": "telemetry",
+      "title": "Telemetry",
+      "description": "Telemetry automates collection, transmission, and analysis of data from distributed systems to monitor performance and health. Provides real-time insights, identifies issues, optimizes performance. Collects metrics like resource usage and error rates for anomaly detection and decision-making.",
+      "difficulty": 1,
+      "estHours": 1,
+      "children": [],
+      "resources": [
+        {
+          "type": "COURSE",
+          "title": "OpenTelemetry Course - Understand Software Performance",
+          "url": "https://www.youtube.com/watch?v=r8UvWSX3KA8"
+        },
+        {
+          "type": "ARTICLE",
+          "title": "What is telemetry and how does it work?",
+          "url": "https://www.techtarget.com/whatis/definition/telemetry"
+        }
+      ],
+      "sortOrder": 29
+    }
+  ],
+  "edges": [
+    {
+      "from": "internet",
+      "to": "learn-a-language",
+      "type": "prerequisite"
+    },
+    {
+      "from": "learn-a-language",
+      "to": "version-control-systems",
+      "type": "prerequisite"
+    },
+    {
+      "from": "version-control-systems",
+      "to": "repo-hosting-services",
+      "type": "prerequisite"
+    },
+    {
+      "from": "repo-hosting-services",
+      "to": "relational-databases",
+      "type": "prerequisite"
+    },
+    {
+      "from": "relational-databases",
+      "to": "apis",
+      "type": "prerequisite"
+    },
+    {
+      "from": "caching:server-side",
+      "to": "caching:server-side:memcached",
+      "type": "related"
+    },
+    {
+      "from": "apis",
+      "to": "caching",
+      "type": "prerequisite"
+    },
+    {
+      "from": "caching",
+      "to": "web-security-knowledge",
+      "type": "prerequisite"
+    },
+    {
+      "from": "web-security-knowledge",
+      "to": "testing",
+      "type": "prerequisite"
+    },
+    {
+      "from": "testing",
+      "to": "ci-cd",
+      "type": "prerequisite"
+    },
+    {
+      "from": "ci-cd",
+      "to": "more-about-databases",
+      "type": "prerequisite"
+    },
+    {
+      "from": "more-about-databases",
+      "to": "scaling-databases",
+      "type": "prerequisite"
+    },
+    {
+      "from": "design-and-development-principles",
+      "to": "containerization",
+      "type": "prerequisite"
+    },
+    {
+      "from": "containerization",
+      "to": "message-brokers",
+      "type": "prerequisite"
+    },
+    {
+      "from": "message-brokers",
+      "to": "search-engines",
+      "type": "prerequisite"
+    },
+    {
+      "from": "search-engines",
+      "to": "web-servers",
+      "type": "prerequisite"
+    },
+    {
+      "from": "web-servers",
+      "to": "real-time-data",
+      "type": "prerequisite"
+    },
+    {
+      "from": "nosql-databases",
+      "to": "scalability",
+      "type": "prerequisite"
+    }
+  ],
+  "projects": [
+    {
+      "title": "Blogging Platform API",
+      "description": "Build a RESTful API for a personal blogging platform",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "CRUD",
+        "RESTful API",
+        "Database"
+      ],
+      "url": "https://roadmap.sh/projects/blogging-platform-api"
+    },
+    {
+      "title": "Broadcast Server",
+      "description": "Build a server that can broadcast messages to connected clients.",
+      "difficulty": 2,
+      "skills": [
+        "Programming Language",
+        "Networking",
+        "Websockets",
+        "HTTP"
+      ],
+      "url": "https://roadmap.sh/projects/broadcast-server"
+    },
+    {
+      "title": "Caching Proxy",
+      "description": "Build a caching server that caches responses from other servers.",
+      "difficulty": 2,
+      "skills": [
+        "Programming Language",
+        "Text Processing",
+        "Markdown libraries",
+        "File Uploads"
+      ],
+      "url": "https://roadmap.sh/projects/caching-server"
+    },
+    {
+      "title": "Database Backup Utility",
+      "description": "Build a database backup utility that can backup and restore any DB",
+      "difficulty": 3,
+      "skills": [
+        "Programming Language",
+        "Databases",
+        "CLI"
+      ],
+      "url": "https://roadmap.sh/projects/database-backup-utility"
+    },
+    {
+      "title": "E-Commerce API",
+      "description": "E-Commerce platform with cart and payment gateway integration.",
+      "difficulty": 2,
+      "skills": [
+        "Programming Language",
+        "Database",
+        "Payment Gateway",
+        "Inventory Management"
+      ],
+      "url": "https://roadmap.sh/projects/ecommerce-api"
+    },
+    {
+      "title": "Expense Tracker API",
+      "description": "Build an API for an expense tracker application.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "Data modeling",
+        "User Authentication"
+      ],
+      "url": "https://roadmap.sh/projects/expense-tracker-api"
+    },
+    {
+      "title": "Expense Tracker",
+      "description": "Build a simple expense tracker to manage your finances.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "CLI",
+        "Filesystem",
+        "Logic Building"
+      ],
+      "url": "https://roadmap.sh/projects/expense-tracker"
+    },
+    {
+      "title": "Workout Tracker",
+      "description": "App to let users track their workouts and progress.",
+      "difficulty": 2,
+      "skills": [
+        "Programming Language",
+        "Date and Time",
+        "Database",
+        "Seeder",
+        "OpenAPI"
+      ],
+      "url": "https://roadmap.sh/projects/fitness-workout-tracker"
+    },
+    {
+      "title": "GitHub User Activity",
+      "description": "Use GitHub API to fetch user activity and display it in the terminal.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "CLI",
+        "API Consumption"
+      ],
+      "url": "https://roadmap.sh/projects/github-user-activity"
+    },
+    {
+      "title": "Image Processing Service",
+      "description": "Build a service that allows users to upload and process images.",
+      "difficulty": 2,
+      "skills": [
+        "Programming Language",
+        "Image Processing",
+        "Database",
+        "Queues"
+      ],
+      "url": "https://roadmap.sh/projects/image-processing-service"
+    },
+    {
+      "title": "Markdown Note-taking App",
+      "description": "Build a note-taking app that uses markdown for formatting.",
+      "difficulty": 2,
+      "skills": [
+        "Programming Language",
+        "Text Processing",
+        "Markdown libraries",
+        "File Uploads"
+      ],
+      "url": "https://roadmap.sh/projects/markdown-note-taking-app"
+    },
+    {
+      "title": "Movie Reservation System",
+      "description": "Build a system that allows users to reserve movie tickets.",
+      "difficulty": 3,
+      "skills": [
+        "Programming Language",
+        "Database",
+        "Scheduling",
+        "Authentication"
+      ],
+      "url": "https://roadmap.sh/projects/movie-reservation-system"
+    },
+    {
+      "title": "Number Guessing Game",
+      "description": "Build a simple number guessing game to test your luck.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "CLI",
+        "Logic Building"
+      ],
+      "url": "https://roadmap.sh/projects/number-guessing-game"
+    },
+    {
+      "title": "Personal Blog",
+      "description": "Build a personal blog to write and publish articles on various topics.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "Basic Authentication",
+        "Markdown",
+        "Filesystem",
+        "Libraries"
+      ],
+      "url": "https://roadmap.sh/projects/personal-blog"
+    },
+    {
+      "title": "Real-time Leaderboard",
+      "description": "Create a real-time leaderboard system for ranking and scoring.",
+      "difficulty": 3,
+      "skills": [
+        "Programming Language",
+        "Database",
+        "Scheduling",
+        "Authentication"
+      ],
+      "url": "https://roadmap.sh/projects/realtime-leaderboard-system"
+    },
+    {
+      "title": "Scalable E-Commerce Platform",
+      "description": "Build an e-commerce platform using microservices architecture.",
+      "difficulty": 3,
+      "skills": [
+        "Microservices",
+        "Database",
+        "Docker",
+        "Authentication"
+      ],
+      "url": "https://roadmap.sh/projects/scalable-ecommerce-platform"
+    },
+    {
+      "title": "Task Tracker",
+      "description": "Build a CLI app to track your tasks and manage your to-do list.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "CLI",
+        "Filesystem"
+      ],
+      "url": "https://roadmap.sh/projects/task-tracker"
+    },
+    {
+      "title": "TMDB CLI Tool",
+      "description": "Use TMDB API to fetch movie information and display it in the terminal.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "CLI",
+        "API Consumption"
+      ],
+      "url": "https://roadmap.sh/projects/tmdb-cli"
+    },
+    {
+      "title": "Todo List API",
+      "description": "Build a RESTful API to allow users to manage their to-do list.",
+      "difficulty": 1,
+      "skills": [
+        "RESTful API",
+        "Database",
+        "CRUD Operations",
+        "Data Modeling",
+        "Authentication"
+      ],
+      "url": "https://roadmap.sh/projects/todo-list-api"
+    },
+    {
+      "title": "Unit Converter",
+      "description": "Unit converter to convert between different units of measurement.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "HTML",
+        "Server",
+        "Logic Building"
+      ],
+      "url": "https://roadmap.sh/projects/unit-converter"
+    },
+    {
+      "title": "URL Shortening Service",
+      "description": "Build a URL Shortener API that helps shorten long URLs.",
+      "difficulty": 2,
+      "skills": [
+        "Programming Language",
+        "Database Indexing",
+        "HTTP Redirects"
+      ],
+      "url": "https://roadmap.sh/projects/url-shortening-service"
+    },
+    {
+      "title": "Weather API",
+      "description": "Build a weather API that fetches and returns weather data.",
+      "difficulty": 1,
+      "skills": [
+        "Programming Language",
+        "3rd Party APIs",
+        "Caching",
+        "Environment Variables"
+      ],
+      "url": "https://roadmap.sh/projects/weather-api-wrapper-service"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Explain what an API endpoint is?",
+      "answer": "api-endpoint.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "Can you explain the difference between SQL and NoSQL databases?",
+      "answer": "sql-vs-nosql.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "What is a RESTful API, and what are its core principles?",
+      "answer": "rest-core-principles.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "Can you describe a typical HTTP request/response cycle?",
+      "answer": "http-request-response-cycle.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "How would you handle file uploads in a web application?",
+      "answer": "file-uploads.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "What kind of tests would you write for a new API endpoint?",
+      "answer": "api-tests.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "Describe how session management works in web applications",
+      "answer": "session-management.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "How do you approach API versioning in your projects?",
+      "answer": "api-versioning.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "How do you protect a server from SQL injection attacks?",
+      "answer": "protect-sql-injection.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "Explain the concept of statelessness in HTTP and how it impacts backend services",
+      "answer": "statelessness-http.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "What is containerization, and how does it benefit backend development?",
+      "answer": "containerization.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "What measures would you take to secure a newly developed API?",
+      "answer": "secure-api.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "How would you scale a backend application during a traffic surge?",
+      "answer": "scale-backend.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "What tools and techniques do you use for debugging a backend application?",
+      "answer": "debugging-backend.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "How do you ensure your backend code is maintainable and easy to understand?",
+      "answer": "maintainable-code.md",
+      "topics": [
+        "Beginner"
+      ]
+    },
+    {
+      "question": "Describe how you would implement a full-text search in a database.",
+      "answer": "fulltext-search.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "How would you approach batch processing in a data-heavy backend application?",
+      "answer": "batch-processing.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "Can you explain the use and benefits of a message queue in a distributed system?",
+      "answer": "message-queue.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "What strategies would you use to manage database connections in a high-load scenario?",
+      "answer": "db-connections.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "How would you set up a continuous integration/continuous deployment (CI/CD) pipeline for backend services?",
+      "answer": "ci-cd.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "Can you describe a distributed caching strategy for a high-availability application?",
+      "answer": "distributed-caching.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "What methods can you use for managing background tasks in your applications?",
+      "answer": "bg-tasks.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "How do you handle data encryption and decryption in a privacy-focused application?",
+      "answer": "data-encryption.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "What are webhooks and how have you implemented them in past projects?",
+      "answer": "webhooks.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "What considerations must be taken into account for GDPR compliance in a backend system?",
+      "answer": "gdpr-compliance.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "Explain how you would deal with long-running processes in web requests.",
+      "answer": "long-running.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "Discuss the implementation of rate limiting to protect APIs from abuse.",
+      "answer": "rate-limiting.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "How do you instrument and monitor the performance of backend applications?",
+      "answer": "instrument-monitor.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "What are microservices, and how would you decompose a monolith into microservices?",
+      "answer": "decompose-microservices.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "How have you managed API dependencies in backend systems?",
+      "answer": "api-dependencies.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "Describe the concept of eventual consistency and its implications in backend systems.",
+      "answer": "eventual-consistency.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "What is a reverse proxy, and how is it useful in backend development?",
+      "answer": "reverse-proxy.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "How would you handle session state in a load-balanced application environment?",
+      "answer": "load-balanced-session.md",
+      "topics": [
+        "Intermediate"
+      ]
+    },
+    {
+      "question": "What is database replication, and how can it be used for fault tolerance?",
+      "answer": "fault-tolerance.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Describe the use of blue-green deployment strategy in backend services",
+      "answer": "blue-green-deployment.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Can you explain the consistency models in distributed databases (e.g., CAP theorem)?",
+      "answer": "cap-theorem.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "How do you manage schema migrations in a continuous delivery environment?",
+      "answer": "schema-migrations.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "What strategies exist for handling idempotency in REST API design?",
+      "answer": "idempotency.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Describe the implementation of a single sign-on (SSO) solution",
+      "answer": "sso.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Explain how you would develop a backend system for handling IOT device data streams",
+      "answer": "iot-streams.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "How would you architect a backend to support real-time data synchronization across devices?",
+      "answer": "realtime-data-sync.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Discuss the benefits and drawbacks of microservice architectures in backend systems.",
+      "answer": "benefits-drawbacks-microservices.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "How would you approach load testing a backend API?",
+      "answer": "load-testing-api.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Describe how you would implement a server-side cache eviction strategy.",
+      "answer": "cache-eviction.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "What are correlation IDs, and how can they be used for tracing requests across services?",
+      "answer": "correlation-ids.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Explain the difference between optimistic and pessimistic locking and when to use each",
+      "answer": "optimistic-vs-pessimistic.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "What methods would you use to prevent deadlocks in database transactions?",
+      "answer": "deadlock-db-transaction.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "How would you secure inter-service communication in a microservices architecture?",
+      "answer": "secure-interservice.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Discuss techniques for preventing and detecting data anomalies in large-scale systems",
+      "answer": "anomaly-detection.md",
+      "topics": [
+        "Advanced"
+      ]
+    },
+    {
+      "question": "Describe the process of creating a global, high-availability data storage solution for a multinational application.",
+      "answer": "high-available-storage.md",
+      "topics": [
+        "Advanced"
+      ]
+    }
+  ]
+}

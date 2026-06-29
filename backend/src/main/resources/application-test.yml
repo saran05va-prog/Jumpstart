@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:jumpstart;MODE=MySQL;DB_CLOSE_DELAY=-1;NON_KEYWORDS=USER
+    driver-class-name: org.h2.Driver
+    username: sa
+    password:
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: false
+  flyway:
+    enabled: false
+
+jumpstart:
+  security:
+    jwt:
+      secret: test-secret-key-for-jwt-signing-in-automated-tests-only-do-not-use-in-prod
+      access-expiration-ms: 900000
+      refresh-expiration-ms: 604800000
+  cors:
+    allowed-origins: http://localhost:5173

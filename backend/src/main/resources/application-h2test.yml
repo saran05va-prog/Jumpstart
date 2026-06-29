@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:h2:mem:testdb;MODE=MySQL;DB_CLOSE_DELAY=-1
+    username: sa
+    password:
+    driver-class-name: org.h2.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+  flyway:
+    enabled: false
+
+server:
+  port: 8090
+
+jumpstart:
+  security:
+    jwt:
+      secret: test-secret-key-that-is-at-least-32-characters-long
+      access-expiration-ms: 900000
+      refresh-expiration-ms: 604800000
+  cors:
+    allowed-origins: http://localhost:5173

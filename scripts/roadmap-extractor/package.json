@@ -1,0 +1,13 @@
+{
+  "name": "roadmap-extractor",
+  "private": true,
+  "type": "module",
+  "version": "1.0.0",
+  "description": "Extracts roadmap.sh content into a source-agnostic intermediate representation (IR) for the Jumpstart Learning OS.",
+  "scripts": {
+    "extract": "node extract.mjs"
+  },
+  "dependencies": {
+    "js-yaml": "^4.3.0"
+  }
+}

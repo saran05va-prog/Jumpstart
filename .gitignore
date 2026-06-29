@@ -1,0 +1,39 @@
+# ── Secrets ──
+.env
+.env.local
+.env.*.local
+backend/.env
+frontend/.env
+
+# ── Backend ──
+backend/target/
+backend/.mvn/
+!backend/.mvn/wrapper/maven-wrapper.properties
+*.class
+*.jar
+*.log
+backend/.idea/
+*.iml
+backend/.vscode/
+backend/HELP.md
+
+# ── Frontend ──
+frontend/node_modules/
+frontend/dist/
+frontend/.vscode/
+frontend/.idea/
+
+# ── OS ──
+.DS_Store
+Thumbs.db
+
+# ── IDE ──
+.idea/
+.vscode/
+*.iml
+*.swp
+*~
+
+# ─<arg_value> Extractor ──
+scripts/roadmap-extractor/node_modules/
+scripts/roadmap-extractor/package-lock.json
