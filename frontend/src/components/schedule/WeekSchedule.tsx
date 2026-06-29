@@ -218,7 +218,7 @@ export default function WeekSchedule({ weekStart, onWeekChange, dailyHours, refr
 
   async function handleExport() {
     try {
-      const res = await fetch(`${import.meta.env.VITE_API_URL || "http://localhost:8081/api"}/schedule/export.ics?weekStart=${weekStartStr}`, {
+      const res = await fetch(`${import.meta.env.VITE_API_URL || "https://jumpstart-production.up.railway.app/api"}/schedule/export.ics?weekStart=${weekStartStr}`, {
         headers: { Authorization: `Bearer ${getAccessToken()}` },
       });
       const blob = await res.blob();

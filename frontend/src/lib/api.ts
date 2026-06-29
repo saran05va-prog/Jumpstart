@@ -8,7 +8,7 @@
  *  - Typed auth endpoint helpers
  */
 
-const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:8081/api";
+const BASE_URL = import.meta.env.VITE_API_URL || "https://jumpstart-production.up.railway.app/api";
 
 const ACCESS_TOKEN_KEY = "jumpstart_access_token";
 const REFRESH_TOKEN_KEY = "jumpstart_refresh_token";
